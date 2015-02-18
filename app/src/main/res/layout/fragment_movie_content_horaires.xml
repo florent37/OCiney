@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:ttf="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/horrairesLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_gravity="center_horizontal"
+    android:layout_marginBottom="10dip"
+    android:layout_marginTop="10dip"
+    android:tag="@string/animer">
+
+    <com.bdc.ociney.view.textview.TypefacedTextView
+        android:id="@+id/titreHoraires"
+        style="@style/bigTitleFicheFilm"
+        android:layout_alignParentTop="true"
+        android:text="@string/titreHoraires"
+        android:visibility="gone"
+        ttf:typeface="Roboto-Black.ttf" />
+
+    <RelativeLayout
+        android:id="@+id/horrairesIci"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/titreHoraires"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="10dip"
+        android:background="@drawable/shape_cell_theater_distance"
+        android:paddingLeft="10dip"
+        android:paddingRight="10dip">
+
+        <ImageView
+            android:id="@+id/img_ici"
+            android:layout_width="48dip"
+            android:layout_height="48dip"
+            android:layout_centerVertical="true"
+            android:layout_margin="10dip"
+            android:background="@drawable/ic_drawer_salles" />
+
+        <com.bdc.ociney.view.textview.TypefacedTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_toRightOf="@+id/img_ici"
+            android:paddingRight="10dip"
+            android:text="Trouvez un salle à proximité ... \nou plus loin qu'à proximité"
+            android:textColor="@color/white90"
+            ttf:typeface="Roboto-Thin.ttf" />
+    </RelativeLayout>
+
+</RelativeLayout>

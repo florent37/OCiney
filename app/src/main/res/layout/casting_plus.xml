@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/castingPlus"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:paddingLeft="30dip"
+    android:paddingRight="30dip"
+    android:tag="@string/animer">
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:background="@android:color/transparent"
+        android:paddingBottom="5dip">
+
+        <RelativeLayout
+            android:layout_width="70dip"
+            android:layout_height="90dip"
+            android:layout_alignParentLeft="true"
+            android:alpha="0.2"
+            android:gravity="center"
+            android:padding="5dip">
+
+            <ImageView
+                android:id="@+id/placeholder_bg"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_centerInParent="true"
+                android:scaleType="fitXY"
+                android:src="@drawable/plus_dashed_photos_white" />
+
+            <ImageView
+                android:id="@+id/image"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_centerInParent="true"
+                android:scaleType="centerCrop" />
+
+            <ImageView
+                android:layout_width="25dip"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:src="@drawable/plus_white" />
+
+        </RelativeLayout>
+
+    </RelativeLayout>
+</LinearLayout>

@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:ttf="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/empty"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/bgCredit"
+    android:orientation="vertical"
+    android:visibility="gone">
+
+    <ImageView
+        android:id="@+id/empty_image"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:adjustViewBounds="true"
+        android:alpha="0.3"
+        android:fitsSystemWindows="true"
+        android:src="@drawable/ic_in_app_big" />
+
+    <com.bdc.ociney.view.textview.TypefacedTextView
+        android:id="@+id/empty_texte"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/empty_image"
+        android:layout_centerHorizontal="true"
+        android:paddingTop="5dip"
+        android:text="@string/vide"
+        android:textColor="@color/white70"
+        ttf:typeface="" />
+
+</RelativeLayout>

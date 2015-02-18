@@ -1,0 +1,111 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/white"
+    android:orientation="vertical">
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:ttf="http://schemas.android.com/apk/res-auto"
+        android:layout_width="match_parent"
+        android:layout_height="100dip"
+        android:background="@android:color/white"
+        android:clipChildren="false"
+        android:clipToPadding="true"
+        android:fillViewport="true"
+        android:visibility="gone">
+
+        <RelativeLayout
+
+            android:id="@+id/movingView"
+            android:layout_width="match_parent"
+            android:layout_height="100dip">
+            <!-- laisser ça si on veut des animations -->
+
+            <ImageView
+                android:id="@+id/image"
+                android:layout_width="100dip"
+                android:layout_height="match_parent"
+                android:adjustViewBounds="true"
+                android:fitsSystemWindows="true"
+                android:scaleType="centerCrop" />
+
+
+            <com.bdc.ociney.view.textview.TypefacedTextView
+                android:id="@+id/nom"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toRightOf="@+id/image"
+                android:lines="1"
+                android:text="Pathé Place d'Arc"
+                android:textAllCaps="true"
+                android:textColor="@color/black80"
+                android:textSize="20sp"
+                ttf:typeface="RobotoCondensed-Bold.ttf" />
+
+
+            <com.bdc.ociney.view.textview.TypefacedTextView
+                android:id="@+id/adresse"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/nom"
+                android:layout_toRightOf="@+id/image"
+                android:ellipsize="end"
+                android:lines="1"
+                android:paddingBottom="1dip"
+                android:text="2, rue Nicolas-Copernic"
+                android:textSize="15sp"
+                ttf:typeface="RobotoCondensed-Bold.ttf" />
+
+            <com.bdc.ociney.view.textview.TypefacedTextView
+                android:id="@+id/codePostal"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/adresse"
+                android:layout_toRightOf="@+id/image"
+                android:text="45000"
+                android:textSize="15sp"
+                ttf:typeface="RobotoCondensed-Bold.ttf" />
+
+            <com.bdc.ociney.view.textview.TypefacedTextView
+                android:id="@+id/ville"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/adresse"
+                android:layout_toRightOf="@+id/codePostal"
+                android:ellipsize="end"
+                android:text="Orléans"
+                android:textColor="@color/black75"
+                android:textSize="15sp"
+                ttf:typeface="RobotoCondensed-Bold.ttf" />
+
+            <com.bdc.ociney.view.textview.TypefacedTextView
+                android:id="@+id/chaine"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/codePostal"
+                android:layout_toRightOf="@+id/image"
+                android:ellipsize="end"
+                android:text="Pathé"
+                android:textColor="@color/black75"
+                android:textSize="18sp"
+                ttf:typeface="RobotoCondensed-Bold.ttf" />
+
+            <ImageView
+                android:id="@+id/accesHandicape"
+                android:layout_width="40dip"
+                android:layout_height="40dip"
+                android:layout_alignParentBottom="true"
+                android:layout_alignParentRight="true"
+                android:adjustViewBounds="true"
+                android:src="@drawable/ic_handicap" />
+
+        </RelativeLayout>
+    </LinearLayout>
+
+    <GridView
+        android:id="@+id/list"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:numColumns="1" />
+
+</LinearLayout>

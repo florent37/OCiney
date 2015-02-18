@@ -1,0 +1,10 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/black"
+    android:orientation="vertical"
+    android:paddingTop="?android:actionBarSize">
+
+    <include layout="@layout/fragment_list_theater" />
+
+</RelativeLayout>

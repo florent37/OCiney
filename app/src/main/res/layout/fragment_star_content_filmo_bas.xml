@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/filmo_line2"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_below="@+id/filmo_line1"
+    android:layout_marginTop="13dip">
+
+    <RelativeLayout
+        android:id="@+id/filmo5"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:visibility="gone">
+
+        <include layout="@layout/jaquette" />
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/filmo6"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/filmo5"
+        android:layout_marginLeft="85dip"
+        android:visibility="gone">
+
+        <include layout="@layout/jaquette" />
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/filmo7"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/filmo6"
+        android:layout_marginLeft="85dip"
+        android:visibility="gone">
+
+        <include layout="@layout/jaquette" />
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/filmoPlus"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/filmo7"
+        android:layout_marginLeft="85dip"
+        android:visibility="gone">
+
+        <include layout="@layout/jaquette_plus" />
+
+    </RelativeLayout>
+
+</RelativeLayout>

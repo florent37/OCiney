@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:ttf="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/layout"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="#A0A0A0"
+    android:clipChildren="false"
+    android:clipToPadding="true"
+    android:descendantFocusability="blocksDescendants"
+    android:fillViewport="true"
+    android:minHeight="@dimen/cell_theater_height"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:id="@+id/movingView"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/cell_theater_height">
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/gradient_black_50_black_20" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:alpha=".2"
+            android:background="@drawable/gradient_black_100" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:alpha="0.1"
+            android:background="@drawable/splash_stripes_repeat" />
+
+        <ImageView
+            android:id="@+id/image"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:adjustViewBounds="true"
+            android:alpha="0.1"
+            android:fitsSystemWindows="true"
+            android:scaleType="fitEnd"
+            android:src="@drawable/logo_default" />
+
+        <RelativeLayout
+            android:id="@+id/theaterInfo"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_above="@+id/horaires"
+            android:padding="5dip">
+
+            <LinearLayout
+                android:id="@+id/gps"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignBottom="@+id/adresse"
+                android:layout_alignParentRight="true"
+                android:paddingLeft="20dp"
+                android:paddingRight="5dip"
+                android:paddingTop="40dp">
+
+                <ImageView
+                    android:layout_width="10dip"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="7dip"
+                    android:src="@drawable/ic_nav" />
+
+                <com.bdc.ociney.view.textview.TypefacedTextView
+                    android:id="@+id/distance"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:lines="1"
+                    android:text="1.6km"
+                    android:textColor="@color/white90"
+                    android:textSize="13sp"
+                    ttf:typeface="RobotoCondensed-Regular.ttf" />
+            </LinearLayout>
+
+            <com.bdc.ociney.view.textview.TypefacedTextView
+                android:id="@+id/nom"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_above="@+id/adresse"
+                android:layout_marginLeft="110dip"
+                android:ellipsize="end"
+                android:lines="1"
+                android:text="Pathé Place d'Arc"
+                android:textColor="@color/white95"
+                android:textSize="20sp"
+                ttf:typeface="RobotoCondensed-Bold.ttf" />
+
+            <com.bdc.ociney.view.textview.TypefacedTextView
+                android:id="@+id/adresse"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_marginBottom="3dip"
+                android:layout_marginLeft="110dip"
+                android:layout_marginRight="90dip"
+                android:ellipsize="end"
+                android:lines="1"
+                android:text="45770 Saran"
+                android:textColor="@color/white80"
+                android:textSize="12sp"
+                ttf:typeface="RobotoCondensed-Light.ttf" />
+
+        </RelativeLayout>
+
+        <LinearLayout
+            android:id="@+id/horaires"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:background="@color/black70"
+            android:gravity="center_vertical"
+            android:minHeight="30dp"
+            android:orientation="vertical"
+            android:paddingBottom="5dip"
+            android:paddingLeft="110dip"
+            android:paddingTop="5dip">
+
+
+            <include layout="@layout/cell_theater_horraires" />
+
+        </LinearLayout>
+
+        <ImageView
+            android:id="@+id/porte"
+            android:layout_width="130dip"
+            android:layout_height="match_parent"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentLeft="true"
+            android:adjustViewBounds="true"
+            android:fitsSystemWindows="true"
+            android:src="@drawable/porte" />
+
+
+        <ImageView
+            android:id="@+id/accesHandicape"
+            android:layout_width="20dip"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@+id/porte"
+            android:layout_alignLeft="@+id/porte"
+            android:layout_marginBottom="78dip"
+            android:layout_marginLeft="30dip"
+            android:adjustViewBounds="true"
+            android:src="@drawable/ic_handicap_skew" />
+    </RelativeLayout>
+
+
+</LinearLayout>

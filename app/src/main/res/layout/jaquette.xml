@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:ttf="http://schemas.android.com/apk/res-auto"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:layout_marginTop="2dip"
+        android:layout_width="90dip"
+        android:layout_height="115dip">
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/filmo_shadow"
+            android:scaleType="fitXY" />
+
+        <RelativeLayout
+            android:layout_width="70dip"
+            android:layout_height="95dip"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="0.6dip"
+            android:layout_marginTop="1dip">
+
+            <ImageView
+                android:id="@+id/jaquetteWhite"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_centerInParent="true"
+                android:background="@drawable/shape_jaquette_rounded_white" />
+
+            <RelativeLayout
+                android:id="@+id/placeholder_filmo"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_centerInParent="true"
+                    android:alpha="0.8"
+                    android:background="@drawable/gradient_placeholder_filmo" />
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:alpha="0.2"
+                    android:src="@drawable/ic_drawer_films" />
+            </RelativeLayout>
+
+            <com.bdc.ociney.view.RoundedImageView
+                android:id="@+id/jaquette"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_centerInParent="true"
+                android:adjustViewBounds="true"
+                android:alpha="0.8"
+                android:scaleType="fitXY" />
+
+            <ImageView
+                android:layout_width="28dip"
+                android:layout_height="match_parent"
+                android:layout_alignParentRight="true"
+                android:alpha="0.8"
+                android:background="@drawable/filmo_reflet" />
+        </RelativeLayout>
+
+        <com.bdc.ociney.view.textview.TypefacedTextView
+            android:id="@+id/titreFilmo"
+            android:layout_width="87dip"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:ellipsize="end"
+            android:gravity="right"
+            android:lines="1"
+            android:paddingLeft="20dip"
+            android:paddingRight="2dip"
+            android:text="Titre de film #1"
+            android:textColor="@android:color/black"
+            android:textSize="8sp"
+            ttf:typeface="RobotoCondensed-Bold.ttf" />
+
+
+    </RelativeLayout>
+
+    <com.bdc.ociney.view.textview.TypefacedTextView
+        android:id="@+id/roleFilmo"
+        android:layout_width="87dip"
+        android:layout_height="wrap_content"
+        android:ellipsize="end"
+        android:gravity="right"
+        android:lines="1"
+        android:paddingLeft="20dip"
+        android:paddingRight="2dip"
+        android:text="Role Machin "
+        android:textColor="@color/black70"
+        android:textSize="11sp"
+        ttf:typeface="Roboto-Light.ttf" />
+
+</LinearLayout>

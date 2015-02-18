@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:ttf="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <RelativeLayout
+        android:id="@+id/parallaxContent"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true">
+
+        <ImageView
+            android:id="@+id/image"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:adjustViewBounds="true"
+            android:fitsSystemWindows="true"
+            android:scaleType="centerCrop" />
+
+    </RelativeLayout>
+
+    <View
+        android:id="@+id/button"
+        android:layout_width="90dip"
+        android:layout_height="90dip"
+        android:layout_centerInParent="true"
+        android:background="@drawable/play" />
+
+
+    <com.bdc.ociney.view.textview.TypefacedTextView
+        android:id="@+id/title"
+        android:layout_width="match_parent"
+        android:layout_height="58dip"
+        android:layout_above="@+id/bobineTop"
+        android:layout_marginBottom="14dip"
+        android:ellipsize="end"
+        android:gravity="center_vertical|center"
+        android:lines="2"
+        android:paddingLeft="30dip"
+        android:paddingRight="30dip"
+        android:text="titre de la bande annonce autre truc superlong VO"
+        android:textColor="@android:color/white"
+        android:textSize="18sp"
+        android:visibility="gone"
+        ttf:typeface="Roboto-Thin.ttf" />
+
+</RelativeLayout>

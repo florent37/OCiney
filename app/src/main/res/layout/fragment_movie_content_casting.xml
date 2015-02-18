@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:paddingTop="20dip"
+    android:tag="@string/animer">
+
+    <com.bdc.ociney.view.textview.TypefacedTextView
+        android:id="@+id/titreCast"
+        style="@style/bigTitleFicheFilm"
+        android:text="@string/titreCast" />
+
+    <LinearLayout
+        android:id="@+id/castingLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <include layout="@layout/realisateur" />
+
+    </LinearLayout>
+
+</LinearLayout>

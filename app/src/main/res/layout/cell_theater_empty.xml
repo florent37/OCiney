@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<View xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/layout"
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/cell_theater_height"
+    android:background="@android:color/transparent"
+    android:clipChildren="false"
+    android:clipToPadding="true"
+    android:descendantFocusability="blocksDescendants"
+    android:fillViewport="true"
+    android:minHeight="@dimen/cell_theater_height"
+    android:orientation="vertical"/>

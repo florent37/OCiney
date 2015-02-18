@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <RelativeLayout
+        android:id="@+id/filmo1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="gone">
+
+        <include layout="@layout/jaquette" />
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/filmo2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/filmo1"
+        android:layout_marginLeft="85dip"
+        android:visibility="gone">
+
+        <include layout="@layout/jaquette" />
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/filmo3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/filmo2"
+        android:layout_marginLeft="85dip"
+        android:visibility="gone">
+
+        <include layout="@layout/jaquette" />
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/filmo4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/filmo3"
+        android:layout_marginLeft="85dip"
+        android:visibility="gone">
+
+        <include layout="@layout/jaquette" />
+
+    </RelativeLayout>
+
+</RelativeLayout>

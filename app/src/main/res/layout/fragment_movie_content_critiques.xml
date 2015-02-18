@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:doubleProgress="http://schemas.android.com/apk/res-auto"
+    xmlns:ttf="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/critiquesLayout"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="20dip"
+    android:orientation="vertical"
+    android:tag="@string/animer">
+
+    <com.bdc.ociney.view.textview.TypefacedTextView
+        android:id="@+id/titreCritique"
+        style="@style/bigTitleFicheFilm"
+        android:text="@string/titreCritique"
+        ttf:typeface="Roboto-Black.ttf" />
+
+    <com.bdc.ociney.view.DoubleProgress
+        android:id="@+id/critiques"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignParentTop="true"
+        android:paddingLeft="15dip"
+        android:paddingRight="15dip"
+        doubleProgress:attente="5000"
+        doubleProgress:max="5"
+        doubleProgress:temps="1500"
+        doubleProgress:textFromAlpha="60"
+        doubleProgress:textToAlpha="80"
+        doubleProgress:texteBas="PRESSE"
+        doubleProgress:texteHaut="SPECTATEURS"
+
+        />
+
+</LinearLayout>

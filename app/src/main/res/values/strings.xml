@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">OCiney</string>
+    <string name="app_chapo">FILMS | HORAIRES | CRITIQUES | CASTING</string>
+    <string name="prochainement">Prochainement</string>
+    <string name="a_laffiche">A l\'affiche</string>
+    <string name="films">Films</string>
+    <string name="stars">Stars</string>
+    <string name="theaters">Cinémas</string>
+    <string name="movies">Films</string>
+    <string name="salles">Salles</string>
+
+    <string name="titreCritique">les notes</string>
+    <string name="titreHoraires">trouver une salle</string>
+    <string name="titreSynopsis">synopsis</string>
+    <string name="titreCast">casting</string>
+    <string name="titreOriginal">Titre original :</string>
+    <string name="dateDeSortie">Date de sortie :</string>
+    <string name="realisateur">Réalisateur</string>
+    <string name="images">images</string>
+    <string name="bandesAnnonces">bandesAnnonces</string>
+    <string name="animer">animer</string>
+    <string name="ici">ici</string>
+    <string name="ici_sub">les salles \nà proximité</string>
+    <string name="ailleurs">ailleurs</string>
+    <string name="ailleurs_sub">plus loin \nqu\'à proximité...</string>
+    <string name="recherche">Recherche</string>
+    <string name="enSalleLe">En salle le</string>
+    <string name="biographie">Biographie</string>
+    <string name="filmographie">Filmographie</string>
+    <string name="role_non_renseigne">nr</string>
+    <string name="activite_non_renseigne">nr</string>
+    <string name="photos">Photos</string>
+    <string name="dateDeNaissance">Date de naissance :</string>
+    <string name="lieu">Lieu de naissance :</string>
+    <string name="metier">Activités :</string>
+    <string name="calendar">Ajouter une séance</string>
+    <string name="favoris">Favoris</string>
+    <string name="version_ociney">Version 1.0.2</string>
+    <string name="credit_aka">Pooley</string>
+    <string name="credit_sub_aka">Designer UI/UX</string>
+    <string name="projections">Séances</string>
+    <string name="casting_complet">Casting complet</string>
+    <string name="vide">Aucun résultat trouvé</string>
+    <string name="credits">Crédits</string>
+    <string name="choisir_seance">Choisir sa séance</string>
+    <string name="message_fond_ecran">Assigner en fond d\'écran ?</string>
+    <string name="titre_fond_ecran">Fond écran</string>
+    <string name="oui">Oui</string>
+    <string name="non">Non</string>
+    <string name="fond_ecran_change">Votre nouveau fond d\'écran a été appliqué</string>
+    <string name="erreur_reseau">Aucune connexion internet trouvée</string>
+    <string name="erreur_gps">Aucun service GPS disponible</string>
+    <string name="gps_vide">Nous n\'avons trouvé aucun cinéma, vous pouvez toujours en rechercher un !</string>
+
+    <string-array name="action_list">
+        <item>@string/prochainement</item>
+        <item>@string/a_laffiche</item>
+    </string-array>
+
+</resources>

@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:ttf="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/relative_biographie"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:paddingLeft="20dip"
+    android:paddingRight="20dip"
+    android:visibility="gone">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="10dip"
+        android:layout_marginTop="15dip">
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_centerVertical="true"
+            android:layout_toLeftOf="@+id/titreBiographie"
+            android:background="@color/black20" />
+
+        <com.bdc.ociney.view.textview.TypefacedTextView
+            android:id="@+id/titreBiographie"
+            style="@style/bigTitleFicheFilm"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:alpha="0.2"
+            android:gravity="center_horizontal"
+            android:text="@string/biographie"
+            android:textColor="@android:color/black" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_centerVertical="true"
+            android:layout_toRightOf="@+id/titreBiographie"
+            android:background="@color/black20" />
+    </RelativeLayout>
+
+
+    <com.bdc.ociney.view.textview.TextViewEx
+        android:id="@+id/biographie"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColor="@color/black90"
+        android:textSize="14sp"
+        ttf:typeface="Roboto-Regular.ttf" />
+
+</LinearLayout>

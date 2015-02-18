@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<com.bdc.ociney.view.ObservableScrollViewAnimateVisible xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/scrollView"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/transparent"
+    android:fadingEdgeLength="100dip"
+    android:requiresFadingEdge="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="20dip">
+
+        <include layout="@layout/fragment_movie_content_horaires" />
+
+        <include layout="@layout/fragment_movie_content_critiques" />
+
+        <include layout="@layout/fragment_movie_content_synopsis" />
+
+        <LinearLayout
+            android:id="@+id/dateDeSortie"
+            style="@style/movieLine"
+            android:layout_marginLeft="15dip"
+            android:layout_marginRight="15dip"
+            android:tag="@string/animer">
+
+            <com.bdc.ociney.view.textview.TypefacedTextView
+                style="@style/movieLineTitle"
+                android:text="@string/dateDeSortie" />
+
+            <com.bdc.ociney.view.textview.TypefacedTextView style="@style/movieLineValue" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/titreOriginal"
+            style="@style/movieLine"
+            android:layout_marginBottom="10dip"
+            android:layout_marginLeft="15dip"
+            android:layout_marginRight="15dip"
+            android:layout_marginTop="10dip"
+            android:tag="@string/animer">
+
+            <com.bdc.ociney.view.textview.TypefacedTextView
+                style="@style/movieLineTitle"
+                android:text="@string/titreOriginal" />
+
+            <com.bdc.ociney.view.textview.TypefacedTextView style="@style/movieLineValue" />
+        </LinearLayout>
+
+        <include layout="@layout/fragment_movie_content_casting" />
+
+    </LinearLayout>
+
+</com.bdc.ociney.view.ObservableScrollViewAnimateVisible>

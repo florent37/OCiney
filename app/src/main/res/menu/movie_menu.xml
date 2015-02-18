@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item
+        android:id="@+id/menu_images"
+        android:icon="@drawable/ic_picture_80"
+        app:showAsAction="always"
+        android:title="@string/images" />
+    <item
+        android:id="@+id/menu_bandesAnnonces"
+        android:icon="@drawable/ic_bandeannonce_30"
+        app:showAsAction="always"
+        android:title="@string/bandesAnnonces" />
+    <item
+        android:id="@+id/menu_favoris"
+        android:icon="@drawable/ic_favoris_off"
+        app:showAsAction="always"
+        android:title="@string/bandesAnnonces" />
+
+</menu>

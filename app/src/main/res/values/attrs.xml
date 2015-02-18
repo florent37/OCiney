@@ -1,0 +1,14 @@
+<resources>
+    <declare-styleable name="TypefacedTextView">
+        <attr name="typeface" format="string" />
+    </declare-styleable>
+    <declare-styleable name="DoubleProgress">
+        <attr name="texteHaut" format="string" />
+        <attr name="texteBas" format="string" />
+        <attr name="max" format="float" />
+        <attr name="temps" format="integer" />
+        <attr name="attente" format="integer" />
+        <attr name="textFromAlpha" format="integer" />
+        <attr name="textToAlpha" format="integer" />
+    </declare-styleable>
+</resources>

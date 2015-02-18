@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:ttf="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/bgCredit"
+    android:clipChildren="false">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/bgCredit"
+        android:clipChildren="false"
+        android:gravity="center_horizontal"
+        android:orientation="vertical">
+
+
+        <ImageView
+            android:id="@+id/glass"
+            android:layout_width="160dp"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="30dp"
+            android:adjustViewBounds="true"
+            android:alpha="0.3"
+            android:fitsSystemWindows="true"
+            android:src="@drawable/ic_in_app_big" />
+
+        <ImageView
+            android:id="@+id/txt"
+            android:layout_width="140dip"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/glass"
+            android:layout_centerHorizontal="true"
+            android:adjustViewBounds="true"
+            android:fitsSystemWindows="true"
+            android:paddingTop="10dip"
+            android:src="@drawable/ic_txt_ociney" />
+
+        <com.bdc.ociney.view.textview.TypefacedTextView
+            android:id="@+id/version"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/txt"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="30dp"
+            android:paddingTop="5dip"
+            android:text="@string/version_ociney"
+            android:textColor="@color/white90"
+            ttf:typeface="" />
+
+
+        <ImageView
+            android:id="@+id/image0"
+            android:layout_width="250dip"
+            android:layout_height="wrap_content"
+            android:layout_above="@+id/image1"
+            android:layout_centerHorizontal="true"
+            android:adjustViewBounds="true"
+            android:src="@drawable/konami_flo" />
+
+        <ImageView
+            android:id="@+id/image1"
+            android:layout_width="250dip"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:layout_marginBottom="10dp"
+            android:layout_marginTop="10dp"
+            android:adjustViewBounds="true"
+            android:src="@drawable/konami_kevin" />
+
+        <ImageView
+            android:id="@+id/image2"
+            android:layout_width="250dip"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/image1"
+            android:layout_centerHorizontal="true"
+            android:adjustViewBounds="true"
+            android:src="@drawable/konami_pooley" />
+
+        <!--
+        <include layout="@layout/cell_credits" />
+        -->
+    </LinearLayout>
+</ScrollView>

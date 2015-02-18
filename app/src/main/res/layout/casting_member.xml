@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:ttf="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:paddingLeft="30dip"
+    android:paddingRight="30dip"
+    android:tag="@string/animer">
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:background="@android:color/transparent"
+        android:paddingBottom="5dip">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="48dip"
+            android:gravity="center_vertical"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="10dip"
+            android:background="@color/black50"
+            android:paddingLeft="70dip"
+            android:paddingRight="5dip">
+
+            <com.bdc.ociney.view.textview.TypefacedTextView
+                android:id="@+id/prenom"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dip"
+                android:text="Mark"
+                ttf:typeface="Roboto-Black.ttf"
+                android:visibility="gone"
+                android:textColor="@color/white50" />
+
+            <com.bdc.ociney.view.textview.TypefacedTextView
+                android:id="@+id/nom"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:lines="1"
+                android:ellipsize="end"
+                android:text="Andrew garfield"
+                ttf:typeface="Roboto-Regular.ttf"
+                android:textColor="@color/white90"
+                android:textSize="17sp" />
+
+            <com.bdc.ociney.view.textview.TypefacedTextView
+                android:id="@+id/roles"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/nom"
+                android:lines="1"
+                android:ellipsize="end"
+                android:text="Peter Parker / Spider-Man"
+                android:textColor="@color/white50"
+                android:textSize="12sp"
+                ttf:typeface="Roboto-LightItalic.ttf"/>
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="70dip"
+            android:layout_height="90dip"
+            android:layout_alignParentLeft="true"
+            android:background="@color/white30"
+            android:gravity="center"
+            android:padding="5dip">
+
+            <ImageView
+                android:id="@+id/placeholder_bg"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_centerInParent="true"
+                android:scaleType="centerCrop"
+                android:src="@drawable/gradient_placeholder" />
+            <ImageView
+                android:id="@+id/ic_placeholder"
+                android:layout_width="match_parent"
+                android:layout_height="58dip"
+                android:layout_centerInParent="true"
+                android:src="@drawable/ic_placeholder_people"/>
+
+            <ImageView
+                android:id="@+id/image"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_centerInParent="true"
+                android:scaleType="centerCrop" />
+        </RelativeLayout>
+
+
+    </RelativeLayout>
+</LinearLayout>

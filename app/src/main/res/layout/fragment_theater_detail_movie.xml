@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@android:color/black">
+
+    <android.support.v7.widget.Toolbar xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@+id/toolbar"
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:minHeight="?attr/actionBarSize"
+        android:background="?attr/colorPrimary" />
+
+
+    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@android:color/black">
+
+        <SurfaceView
+            android:layout_width="0px"
+            android:layout_height="0px" />
+
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingLeft="20dip"
+            android:paddingRight="20dip">
+
+            <View
+                android:id="@+id/bande"
+                android:layout_width="match_parent"
+                android:layout_height="10dip"
+                android:background="@android:color/black" />
+
+
+            <android.support.v4.view.ViewPager
+                android:id="@+id/bandesAnnonces"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_alignBottom="@+id/screen"
+                android:layout_below="@+id/bande"
+                android:alpha=".8" />
+
+            <View
+                android:id="@+id/screen"
+                android:layout_width="match_parent"
+                android:layout_height="190dip"
+                android:layout_below="@+id/bande"
+                android:alpha=".3"
+                android:background="@drawable/radial_gradient_white_screen" />
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/curtains"
+            android:layout_width="match_parent"
+            android:layout_height="260dip">
+
+
+            <ImageView
+                android:id="@+id/rideauGauche"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:adjustViewBounds="true"
+                android:fitsSystemWindows="true"
+                android:src="@drawable/curtain_sub_left" />
+
+            <ImageView
+                android:id="@+id/rideauDroit"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:adjustViewBounds="true"
+                android:fitsSystemWindows="true"
+                android:src="@drawable/curtain_sub_right" />
+
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:adjustViewBounds="true"
+                android:fitsSystemWindows="true"
+                android:src="@drawable/curtain_left" />
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:adjustViewBounds="true"
+                android:fitsSystemWindows="true"
+                android:src="@drawable/curtain_right" />
+
+        </RelativeLayout>
+
+        <ImageView
+            android:id="@+id/seats"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="230dip"
+            android:adjustViewBounds="true"
+            android:fitsSystemWindows="true"
+            android:src="@drawable/seats" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@+id/seats"
+            android:alpha="0.1"
+            android:background="@drawable/gradient_black_white" />
+
+        <View
+            android:id="@+id/radial"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_alignBottom="@+id/seats"
+            android:alpha=".1"
+            android:background="@drawable/radial_gradient_black" />
+
+
+        <com.sothree.slidinguppanel.SlidingUpPanelLayout xmlns:sothree="http://schemas.android.com/apk/res-auto"
+            android:id="@+id/slidingDrawer"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="180dip"
+            android:gravity="bottom"
+            sothree:dragView="@+id/header"
+            sothree:overlay="true"
+            sothree:panelHeight="175dip"
+            sothree:paralaxOffset="0dip"
+            sothree:shadowHeight="4dp">
+
+            <!-- Ce qui va être affiché en background-->
+
+            <View
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+            <!-- Le contenu du sliding-->
+
+            <LinearLayout
+                android:id="@+id/movie_header"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <!-- L'entete sliding-->
+                <RelativeLayout
+                    android:id="@+id/cellMovie"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <include layout="@layout/fragment_movie_header" />
+                </RelativeLayout>
+
+                <include layout="@layout/fragment_theater_detail_movie_content" />
+            </LinearLayout>
+
+
+        </com.sothree.slidinguppanel.SlidingUpPanelLayout>
+
+
+    </RelativeLayout>
+</LinearLayout>

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <integer name="cell_movie_poster_height">@integer/fragment_movie_poster_height</integer>
+    <integer name="star_filmo_jaquette_height">100</integer>
+    <integer name="star_photo_height">300</integer>
+    <!-- garder le même pour un chargement rapide -->
+    <integer name="cell_movie_fond_height">300</integer>
+    <integer name="fragment_movie_poster_height">200</integer>
+    <integer name="fragment_movie_fond_height">500</integer>
+    <integer name="fragment_star_fond_height">500</integer>
+
+    <integer name="fragment_movie_fond_blur_height">@integer/fragment_movie_poster_height</integer>
+    <!-- garder le même pour un chargement rapide -->
+    <integer name="fragment_movie_realisateur_height">150</integer>
+    <integer name="fragment_movie_personnality_height">300</integer>
+    <integer name="fragment_movie_fond_personnality_height">500</integer>
+    <integer name="fragment_movie_casting_height">150</integer>
+    <integer name="fragment_movie_bande_annonce_height">300</integer>
+    <integer name="cell_star_image_height">300</integer>
+    <integer name="cell_theater_image_height">300</integer>
+
+    <integer name="fragment_movie_fond_blur">3</integer>
+
+</resources>
