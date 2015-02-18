@@ -1,5 +1,7 @@
 # OCiney
 
+![alt tag](https://raw.githubusercontent.com/florent37/OCiney/master/images/frame_00_films.png)
+
 OCiney is a movie application, open-source version of Allociné, but 
 
 - With an other design
@@ -16,7 +18,7 @@ OCiney is a movie application, open-source version of Allociné, but
 * [AndroidSlidingUpPanel] - A draggable sliding up panel 
 
 ### Development
-Want to contribute? Great!
+Want to contribute? Feel free!
 
 ### Todo's
 
