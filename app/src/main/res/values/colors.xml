@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="main">#63C3FF</color>
+    <color name="actionbar_title_color">@android:color/white</color>
+    <color name="cell_movie_protector">#99555555</color>
+    <color name="couleurProgressCritiqueFond">#333</color>
+    <color name="couleurBgPosterBox">#363636</color>
+    <color name="couleurTitlePosterBox">#ff9b7144</color>
+    <color name="bgCredit">#ff1a1a1a</color>
+
+
+    <!-- BLACK ALPHA -->
+    <color name="black05">#0d000000</color>
+    <color name="black10">#1a000000</color>
+    <color name="black15">#26000000</color>
+    <color name="black20">#33000000</color>
+    <color name="black25">#40000000</color>
+    <color name="black30">#4d000000</color>
+    <color name="black35">#59000000</color>
+    <color name="black40">#66000000</color>
+    <color name="black45">#73000000</color>
+    <color name="black50">#80000000</color>
+    <color name="black55">#8c000000</color>
+    <color name="black60">#99000000</color>
+    <color name="black65">#a6000000</color>
+    <color name="black70">#b3000000</color>
+    <color name="black75">#bf000000</color>
+    <color name="black80">#cc000000</color>
+    <color name="black85">#d9000000</color>
+    <color name="black90">#e6000000</color>
+    <color name="black95">#f2000000</color>
+    <!-- WHITE ALPHA -->
+    <color name="white05">#0dffffff</color>
+    <color name="white10">#1affffff</color>
+    <color name="white15">#26ffffff</color>
+    <color name="white20">#33ffffff</color>
+    <color name="white25">#40ffffff</color>
+    <color name="white30">#4dffffff</color>
+    <color name="white35">#59ffffff</color>
+    <color name="white40">#66ffffff</color>
+    <color name="white45">#73ffffff</color>
+    <color name="white50">#80ffffff</color>
+    <color name="white55">#8cffffff</color>
+    <color name="white60">#99ffffff</color>
+    <color name="white65">#a6ffffff</color>
+    <color name="white70">#b3ffffff</color>
+    <color name="white75">#bfffffff</color>
+    <color name="white80">#ccffffff</color>
+    <color name="white85">#d9ffffff</color>
+    <color name="white90">#e6ffffff</color>
+    <color name="white95">#f2ffffff</color>
+
+    <color name="big_title_person">#C2C2C2</color>
+    <color name="textColor">#BBB</color>
+
+</resources>
+

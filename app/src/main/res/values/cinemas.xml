@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="cinemas_images">
+        <item name="cgr">logo_cgr.png</item>
+        <item name="gaumont">logo_gaumont.png</item>
+        <item name="gaumont-pathe">logo_gaumont-pathe.png</item>
+        <item name="kinepolis">logo_kinepolis.png</item>
+        <item name="megarama">logo_megarama.png</item>
+        <item name="mk2">logo_mk2.png</item>
+        <item name="pathe">logo_pathe.png</item>
+        <item name="ugc">logo_ugc.png</item>
+    </string-array>
+    <string-array name="cinemas_couleurs">
+        <item name="cgr">#ff8171</item>
+        <item name="gaumont">#d9002f</item>
+        <item name="gaumont-pathe">#eba14c</item>
+        <item name="kinepolis">#2170a1</item>
+        <item name="megarama">#6990ff</item>
+        <item name="mk2">#505050</item>
+        <item name="pathe">#dac872</item>
+        <item name="ugc">#4763bf</item>
+    </string-array>
+</resources>

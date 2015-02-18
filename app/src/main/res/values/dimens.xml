@@ -1,0 +1,13 @@
+<resources>
+    <dimen name="header_height">250dp</dimen>
+    <dimen name="header_logo_size">100dp</dimen>
+    <dimen name="drawer_width">280dip</dimen>
+    <dimen name="hauteurProgressCritique">12dip</dimen>
+    <dimen name="hauteurProgressIndicator">38dip</dimen>
+    <dimen name="largeurProgressIndicator">0.5dp</dimen>
+    <dimen name="cell_movie_height">175dip</dimen>
+    <dimen name="cell_movie_image_fond_height">250dip</dimen>
+    <dimen name="tailleBobine">70dip</dimen>
+    <dimen name="cell_theater_height">150dip</dimen>
+    <dimen name="theater_viewpager_negative_margin">-80dip</dimen>
+</resources>

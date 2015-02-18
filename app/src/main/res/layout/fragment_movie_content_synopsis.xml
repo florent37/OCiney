@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:ttf="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="10dp"
+    android:tag="@string/animer">
+
+    <com.bdc.ociney.view.textview.TypefacedTextView
+        android:id="@+id/titreSynopsis"
+        style="@style/bigTitleFicheFilm"
+        android:text="@string/titreSynopsis"
+        />
+
+    <com.bdc.ociney.view.textview.TextViewEx
+        android:id="@+id/synopsis"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/titreSynopsis"
+        android:layout_marginLeft="15dip"
+        android:layout_marginRight="15dip"
+        android:text="Lorem Ipsum dolor sit amet, Lorem Ipsum dolor sit amet,Lorem Ipsum dolor sit amet,Lorem Ipsum dolor sit amet,Lorem Ipsum dolor sit amet,Lorem Ipsum dolor sit amet,Lorem Ipsum dolor sit amet,Lorem Ipsum dolor sit amet,Lorem Ipsum dolor sit amet,Lorem Ipsum dolor sit amet,Lorem Ipsum dolor sit amet,Lorem Ipsum dolor sit amet,"
+        android:textColor="@android:color/white"
+        android:textSize="14sp"
+        ttf:typeface="Roboto-Regular.ttf" />
+
+</LinearLayout>

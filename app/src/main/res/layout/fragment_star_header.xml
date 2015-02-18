@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:ttf="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/header"
+    android:layout_width="match_parent"
+    android:layout_height="170dip">
+
+    <RelativeLayout
+        android:id="@+id/barre_info"
+        android:layout_width="match_parent"
+        android:layout_height="60dip"
+        android:layout_alignParentBottom="true"
+        android:background="@drawable/gradient_white_20_white_100" />
+
+    <RelativeLayout
+        android:id="@+id/barre_star"
+        android:layout_width="match_parent"
+        android:layout_height="60dip"
+        android:layout_alignParentBottom="true"
+        android:background="@android:color/white">
+
+        <View
+            android:id="@+id/couronne"
+            android:layout_width="52dip"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentRight="true"
+            android:alpha=".05"
+            android:background="@drawable/ic_cropped_crown"
+            android:visibility="gone" />
+
+        <View
+            android:id="@+id/topstar"
+            android:layout_width="25dp"
+            android:layout_height="12dp"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentRight="true"
+            android:layout_marginBottom="10dip"
+            android:layout_marginRight="5dip"
+            android:adjustViewBounds="true"
+            android:alpha="0.5"
+            android:background="@drawable/ic_topstar_1"
+            android:fitsSystemWindows="true"
+            android:visibility="visible" />
+
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="60dip"
+            android:alpha="0.1"
+            android:background="@drawable/gradient_transparent_black"
+            android:visibility="visible" />
+
+    </RelativeLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="6dip"
+        android:layout_above="@+id/barre_info"
+        android:background="@drawable/movie_tile_shadow"
+        android:rotation="180" />
+
+    <RelativeLayout
+        android:id="@+id/relative_person_image"
+        android:layout_width="115dip"
+        android:layout_height="115dip"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="10dip"
+        android:layout_marginLeft="10dip"
+        android:background="@drawable/shape_rounded_white">
+
+        <ImageView
+            android:id="@+id/personImage"
+            android:layout_width="106dp"
+            android:layout_height="106dp"
+            android:layout_centerInParent="true"
+            android:src="@drawable/ic_placeholder_people" />
+
+    </RelativeLayout>
+
+
+    <LinearLayout
+        android:id="@+id/relative_name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="120dip"
+        android:layout_toRightOf="@id/relative_person_image"
+        android:gravity="center_vertical"
+        android:orientation="horizontal">
+
+
+        <com.bdc.ociney.view.textview.TypefacedTextView
+            android:id="@+id/nameStar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:ellipsize="end"
+            android:lines="1"
+            android:text="Prénom Nom"
+            android:textColor="@color/black80"
+            android:textSize="18sp"
+            ttf:typeface="Roboto-Regular.ttf" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/relative_name"
+        android:layout_below="@+id/relative_name"
+        android:orientation="horizontal">
+
+        <com.bdc.ociney.view.textview.TypefacedTextView
+            android:id="@+id/age"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:ellipsize="end"
+            android:lines="1"
+            android:paddingRight="2dip"
+            android:text="36 ans"
+            android:textColor="@color/black50"
+            android:textSize="12sp"
+            android:visibility="gone"
+            ttf:typeface="Roboto-LightItalic.ttf" />
+
+        <com.bdc.ociney.view.textview.TypefacedTextView
+            android:id="@+id/nationality"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:ellipsize="end"
+            android:lines="1"
+            android:text="USA"
+            android:textColor="@color/black50"
+            android:textSize="12sp"
+            android:visibility="gone"
+            ttf:typeface="Roboto-LightItalic.ttf" />
+    </LinearLayout>
+
+    <ImageView
+        android:id="@+id/placeholder_image_loader"
+        android:layout_width="30dip"
+        android:layout_height="30dip"
+        android:layout_above="@+id/barre_star"
+        android:layout_alignParentRight="true"
+        android:layout_marginBottom="5dp"
+        android:layout_marginRight="5dp"
+        android:alpha="0.4"
+        android:src="@drawable/ic_drawer_films" />
+
+
+</RelativeLayout>

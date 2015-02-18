@@ -1,0 +1,156 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:ttf="http://schemas.android.com/apk/res-auto"
+    android:layout_width="@dimen/drawer_width"
+    android:layout_height="match_parent"
+    android:layout_gravity="start"
+    android:background="@drawable/drawer_gradient"
+    android:orientation="vertical"
+    android:paddingLeft="6dip"
+    android:paddingRight="6dip">
+
+    <LinearLayout
+        android:id="@+id/drawerMovies"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:padding="6dip">
+
+        <ImageView
+            android:layout_width="36dip"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="16dip"
+            android:src="@drawable/ic_drawer_films" />
+
+        <com.bdc.ociney.view.textview.TypefacedTextView
+            android:id="@id/text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/movies"
+            android:textColor="@color/white95"
+            android:textSize="21sp"
+            ttf:typeface="Roboto-Thin.ttf" />
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:background="@color/white20" />
+
+    <LinearLayout
+        android:id="@+id/drawerTheaters"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:padding="6dip">
+
+        <ImageView
+            android:layout_width="36dip"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="16dip"
+            android:src="@drawable/ic_drawer_salles" />
+
+        <com.bdc.ociney.view.textview.TypefacedTextView
+            android:id="@id/text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/salles"
+            android:textColor="@color/white95"
+            android:textSize="21sp"
+            ttf:typeface="Roboto-Thin.ttf" />
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:background="@color/white20" />
+
+    <LinearLayout
+        android:id="@+id/drawerStars"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:padding="6dip">
+
+        <ImageView
+            android:layout_width="36dip"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="16dip"
+            android:src="@drawable/ic_drawer_stars" />
+
+        <com.bdc.ociney.view.textview.TypefacedTextView
+            android:id="@id/text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/stars"
+            android:textColor="@color/white95"
+            android:textSize="21sp"
+            ttf:typeface="Roboto-Thin.ttf" />
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:background="@color/white20" />
+
+
+    <LinearLayout
+        android:id="@+id/drawerFavoris"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:padding="6dip">
+
+        <ImageView
+            android:layout_width="36dip"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="16dip"
+            android:src="@drawable/ic_drawer_favoris" />
+
+        <com.bdc.ociney.view.textview.TypefacedTextView
+            android:id="@id/text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/favoris"
+            android:textColor="@color/white95"
+            android:textSize="21sp"
+            ttf:typeface="Roboto-Thin.ttf" />
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:background="@color/white20" />
+
+    <LinearLayout
+        android:id="@+id/drawerCredits"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:padding="6dip">
+
+        <ImageView
+            android:layout_width="36dip"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="16dip"
+            android:src="@drawable/ic_drawer_credits" />
+
+        <com.bdc.ociney.view.textview.TypefacedTextView
+            android:id="@id/text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/credits"
+            android:textColor="@color/white95"
+            android:textSize="21sp"
+            ttf:typeface="Roboto-Thin.ttf" />
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:background="@color/white20" />
+</LinearLayout>

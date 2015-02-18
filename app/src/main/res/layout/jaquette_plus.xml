@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="90dip"
+    android:layout_height="100dip">
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:alpha="0"
+        android:background="@drawable/filmo_shadow" />
+
+    <RelativeLayout
+        android:layout_width="70dip"
+        android:layout_height="95dip"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="0.6dip"
+        android:layout_marginTop="1dip"
+        android:alpha="0.15">
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_centerInParent="true"
+            android:background="@drawable/plus_dashed_filmo_plus_black" />
+
+        <ImageView
+            android:id="@+id/jaquettePlus"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_centerInParent="true"
+            android:adjustViewBounds="true"
+            android:scaleType="fitXY" />
+
+        <ImageView
+            android:layout_width="30dip"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:src="@drawable/plus_black" />
+
+    </RelativeLayout>
+</RelativeLayout>

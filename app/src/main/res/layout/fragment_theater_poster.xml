@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:ttf="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <RelativeLayout
+        android:layout_width="220dip"
+        android:layout_height="305dip"
+        android:layout_centerInParent="true">
+
+        <ImageView
+            android:id="@+id/bg_poster_dark"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/couleurBgPosterBox" />
+
+        <RelativeLayout
+            android:id="@+id/bg_darker_poster"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginBottom="7dip"
+            android:layout_marginLeft="10dip"
+            android:layout_marginRight="11dip"
+            android:layout_marginTop="14dip"
+            android:background="@android:color/white">
+
+            <ImageView
+                android:id="@+id/poster"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="3dip"
+                android:adjustViewBounds="true"
+                android:fitsSystemWindows="true"
+                android:scaleType="centerCrop" />
+
+            <ImageView
+
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_centerInParent="true"
+                android:background="@drawable/folded_effect" />
+        </RelativeLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="3dip"
+            android:layout_above="@+id/horaires"
+            android:layout_centerHorizontal="true"
+            android:background="@color/black30" />
+
+        <LinearLayout
+            android:id="@+id/horaires"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:background="@drawable/bg_hours_poster_repeat"
+            android:orientation="vertical"
+            android:paddingBottom="7dip"
+            android:paddingLeft="10dip"
+            android:paddingRight="10dip"
+            android:paddingTop="7dip">
+
+            <include layout="@layout/cell_theater_horraires" />
+
+            <include layout="@layout/cell_theater_horraires" />
+
+            <include layout="@layout/cell_theater_horraires" />
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:alpha="0.2"
+            android:background="@drawable/gradient_window" />
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_alignParentRight="true"
+            android:adjustViewBounds="true"
+            android:fitsSystemWindows="true"
+            android:src="@drawable/reflet_framewood" />
+    </RelativeLayout>
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="50dip"
+        android:layout_alignTop="@+id/woodframe"
+        android:layout_marginTop="60dip"
+        android:layout_toLeftOf="@+id/woodframe"
+        android:src="@drawable/charniere" />
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="50dip"
+        android:layout_alignBottom="@+id/woodframe"
+        android:layout_marginBottom="60dip"
+        android:layout_toLeftOf="@+id/woodframe"
+        android:src="@drawable/charniere" />
+
+    <ImageView
+        android:layout_width="288dip"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/woodframe"
+        android:layout_alignTop="@+id/woodframe"
+        android:adjustViewBounds="true"
+        android:fitsSystemWindows="true"
+        android:src="@drawable/long_shadow" />
+
+    <RelativeLayout
+        android:id="@+id/woodframe"
+        android:layout_width="260dip"
+        android:layout_height="352dip"
+        android:layout_centerInParent="true"
+        android:background="@drawable/wood_frame" />
+
+    <com.bdc.ociney.view.textview.TypefacedTextView
+        android:id="@+id/title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/woodframe"
+        android:layout_alignRight="@+id/woodframe"
+        android:layout_alignTop="@+id/woodframe"
+        android:layout_centerHorizontal="true"
+        android:ellipsize="end"
+        android:gravity="center_horizontal"
+        android:lines="1"
+        android:paddingLeft="25dip"
+        android:paddingRight="25dip"
+        android:paddingTop="7dip"
+        android:text="Spider-Man 2 : Le destin d'un héros ds sfv"
+        android:textAllCaps="true"
+        android:textColor="@color/couleurTitlePosterBox"
+        android:textSize="12sp"
+        ttf:typeface="RobotoCondensed-Bold.ttf" />
+
+    <ImageView
+        android:layout_width="14dip"
+        android:layout_height="wrap_content"
+        android:layout_alignRight="@+id/woodframe"
+        android:layout_centerVertical="true"
+        android:layout_marginRight="5dip"
+        android:src="@drawable/serrure" />
+
+</RelativeLayout>

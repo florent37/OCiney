@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:ttf="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+
+    <RelativeLayout
+        android:id="@+id/barreHaut"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/hauteurProgressIndicator">
+
+        <View
+            android:id="@+id/fondProgress"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/hauteurProgressCritique"
+            android:layout_alignParentBottom="true"
+            android:alpha="0.6"
+            android:background="@color/couleurProgressCritiqueFond" />
+
+        <View
+            android:id="@+id/progressBar"
+            android:layout_width="200dip"
+            android:layout_height="@dimen/hauteurProgressCritique"
+            android:layout_alignParentBottom="true"
+            android:alpha="1"
+            android:background="@android:color/white" />
+
+        <View
+            android:id="@+id/progressIndicator"
+            android:layout_width="@dimen/largeurProgressIndicator"
+            android:layout_height="@dimen/hauteurProgressIndicator"
+            android:layout_alignParentBottom="true"
+            android:layout_toRightOf="@+id/progressBar"
+            android:alpha="1"
+            android:background="@android:color/white" />
+
+        <com.bdc.ociney.view.textview.TypefacedTextView
+            android:id="@+id/valeur"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignTop="@+id/progressIndicator"
+            android:layout_toLeftOf="@+id/progressIndicator"
+            android:gravity="top|center"
+            android:paddingLeft="10dip"
+            android:paddingRight="10dip"
+            android:text="3.7"
+            android:textColor="@android:color/white"
+            android:textSize="18sp"
+            ttf:typeface="Roboto-Thin.ttf" />
+
+        <com.bdc.ociney.view.textview.TypefacedTextView
+            android:id="@+id/text"
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/hauteurProgressCritique"
+            android:layout_alignParentBottom="true"
+            android:gravity="center_vertical|left"
+            android:paddingLeft="5dip"
+            android:text="HAUT"
+            android:textColor="#000"
+            android:textSize="9sp"
+            ttf:typeface="Roboto-Light.ttf" />
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/barreBas"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/hauteurProgressIndicator"
+        android:layout_marginTop="10dp">
+
+        <View
+            android:id="@id/fondProgress"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/hauteurProgressCritique"
+            android:layout_alignParentTop="true"
+            android:alpha="0.6"
+            android:background="@color/couleurProgressCritiqueFond" />
+
+        <View
+            android:id="@id/progressBar"
+            android:layout_width="60dip"
+            android:layout_height="@dimen/hauteurProgressCritique"
+            android:layout_alignParentTop="true"
+            android:alpha="1"
+            android:background="@android:color/white" />
+
+        <View
+            android:id="@id/progressIndicator"
+            android:layout_width="@dimen/largeurProgressIndicator"
+            android:layout_height="@dimen/hauteurProgressIndicator"
+            android:layout_alignParentTop="true"
+            android:layout_toRightOf="@+id/progressBar"
+            android:alpha="1"
+            android:background="@android:color/white" />
+
+        <com.bdc.ociney.view.textview.TypefacedTextView
+            android:id="@id/valeur"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@+id/progressIndicator"
+            android:layout_toLeftOf="@+id/progressIndicator"
+            android:gravity="bottom|left"
+            android:paddingLeft="10dip"
+            android:paddingRight="10dip"
+            android:text="1.2"
+            android:textColor="@android:color/white"
+            android:textSize="18sp"
+            ttf:typeface="Roboto-Thin.ttf" />
+
+        <com.bdc.ociney.view.textview.TypefacedTextView
+            android:id="@id/text"
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/hauteurProgressCritique"
+            android:layout_alignParentTop="true"
+            android:gravity="center_vertical|left"
+            android:paddingLeft="5dip"
+            android:text="BAS"
+            android:textColor="#000"
+            android:textSize="9sp"
+            ttf:typeface="Roboto-Light.ttf" />
+
+    </RelativeLayout>
+
+</LinearLayout>

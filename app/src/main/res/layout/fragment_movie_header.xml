@@ -1,0 +1,203 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:ttf="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/header"
+    android:layout_width="match_parent"
+    android:layout_height="175dip"
+    android:background="@android:color/transparent"
+    android:clickable="true"
+    android:focusable="false">
+
+    <RelativeLayout
+        android:id="@+id/ligneNoire"
+        android:layout_width="match_parent"
+        android:layout_height="120dip"
+        android:layout_alignParentBottom="true"
+        android:background="@drawable/gradient_black_85"
+        android:paddingBottom="6dip"
+        android:paddingEnd="6dip"
+        android:paddingLeft="120dip">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_above="@+id/titre"
+            android:layout_marginBottom="5dip"
+            android:layout_marginLeft="9dip">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <RatingBar
+                    android:id="@+id/ratingUserStar"
+                    style="@style/RatingStar_Small"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:numStars="5"
+                    android:stepSize="0.1" />
+
+                <LinearLayout
+                    android:id="@+id/enSalleLe"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:visibility="gone">
+
+                    <com.bdc.ociney.view.textview.TypefacedTextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:gravity="center_vertical"
+                        android:text="@string/enSalleLe"
+                        android:textColor="@color/white90"
+                        android:textSize="15sp"
+                        ttf:typeface="RobotoCondensed-Bold.ttf" />
+
+                    <com.bdc.ociney.view.textview.TypefacedTextView
+                        android:id="@+id/enSalleLeValue"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:gravity="center_vertical"
+                        android:paddingLeft="4dip"
+                        android:text="00/00/0000"
+                        android:textColor="@color/white90"
+                        android:textSize="15sp"
+                        ttf:typeface="RobotoCondensed-Bold.ttf" />
+
+                </LinearLayout>
+            </RelativeLayout>
+
+            <com.bdc.ociney.view.textview.TypefacedTextView
+                android:id="@+id/ratingUserNum"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:gravity="center_vertical"
+                android:paddingLeft="5dip"
+                android:text="(3.7)"
+                android:textColor="@color/white90"
+                android:textSize="12sp"
+                ttf:typeface="RobotoCondensed-Bold.ttf" />
+
+        </LinearLayout>
+
+
+        <com.bdc.ociney.view.textview.TypefacedTextView
+            android:id="@+id/titre"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_above="@+id/genre"
+            android:ellipsize="end"
+            android:lines="1"
+            android:paddingLeft="10dip"
+            android:text="titre"
+            android:textColor="@android:color/white"
+            android:textSize="16sp"
+            ttf:typeface="RobotoCondensed-Regular.ttf" />
+
+        <com.bdc.ociney.view.textview.TypefacedTextView
+            android:id="@+id/genre"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_above="@id/duree"
+            android:layout_marginBottom="5dip"
+            android:ellipsize="end"
+            android:lines="1"
+            android:paddingLeft="10dip"
+            android:text="genre"
+            android:textColor="@color/white75"
+            android:textSize="12sp"
+            ttf:typeface="Roboto-LightItalic.ttf" />
+
+        <com.bdc.ociney.view.textview.TypefacedTextView
+            android:id="@+id/duree"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_marginBottom="2dip"
+            android:lines="1"
+            android:paddingLeft="10dip"
+            android:text="duree"
+            android:textColor="@color/white70"
+            android:textSize="11sp"
+            ttf:typeface="Roboto-Black.ttf" />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="20dip"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentRight="true"
+            android:gravity="right"
+
+            >
+
+            <ImageView
+                android:id="@+id/movieVF"
+                style="@style/movieHeaderVignette"
+                android:src="@drawable/ic_version_white_vf" />
+
+            <ImageView
+                android:id="@+id/movie2D"
+                style="@style/movieHeaderVignette"
+                android:src="@drawable/ic_version_white_2d" />
+
+            <ImageView
+                android:id="@+id/movie3D"
+                style="@style/movieHeaderVignette"
+                android:src="@drawable/ic_version_white_3d" />
+
+            <ImageView
+                android:id="@+id/movieVO"
+                style="@style/movieHeaderVignette"
+                android:src="@drawable/ic_version_white_vo" />
+        </LinearLayout>
+
+        <ImageView
+            android:id="@+id/placeholder_image_loader"
+            android:layout_width="30dip"
+            android:layout_height="30dip"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="10dp"
+            android:alpha="0.4"
+            android:src="@drawable/ic_drawer_films" />
+
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/imagePosterLayout"
+        android:layout_width="110dip"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="5dip"
+        android:layout_marginLeft="10dip"
+        android:layout_marginRight="5dip"
+        android:layout_marginTop="25dip"
+        android:background="@drawable/frame"
+        android:paddingBottom="7dip"
+        android:paddingLeft="5dip"
+        android:paddingRight="5dip"
+        android:paddingTop="2dip">
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_centerInParent="true"
+            android:background="@drawable/gradient_placeholder" />
+
+        <ImageView
+            android:id="@+id/placeholder_image"
+            android:layout_width="64dip"
+            android:layout_height="64dip"
+            android:layout_centerInParent="true"
+            android:src="@drawable/ic_drawer_films" />
+
+        <ImageView
+            android:id="@+id/imagePoster"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_centerInParent="true"
+            android:adjustViewBounds="true"
+            android:scaleType="fitXY" />
+
+    </RelativeLayout>
+</RelativeLayout>

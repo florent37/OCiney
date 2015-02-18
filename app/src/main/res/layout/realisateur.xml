@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:ttf="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/realisateurLayout"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:paddingLeft="10dip"
+    android:paddingRight="10dip"
+    android:tag="@string/animer">
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="55dip"
+        android:layout_centerVertical="true"
+        android:layout_marginRight="80dip"
+        android:orientation="vertical">
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/black80"
+            android:gravity="center_vertical"
+            android:orientation="vertical"
+            android:paddingLeft="10dip">
+
+            <com.bdc.ociney.view.textview.TypefacedTextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ellipsize="end"
+                android:lines="1"
+                android:textColor="@color/white50"
+                ttf:typeface="Roboto-LightItalic.ttf"
+                android:text="@string/realisateur" />
+
+            <com.bdc.ociney.view.textview.TypefacedTextView
+                android:id="@+id/realisateurPrenom"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="prenom"
+                android:visibility="gone" />
+
+            <com.bdc.ociney.view.textview.TypefacedTextView
+                android:id="@+id/realisateurNom"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ellipsize="end"
+                android:lines="1"
+                ttf:typeface="Roboto-Regular.ttf"
+                android:textSize="16sp"
+                android:textColor="@android:color/white"
+                android:text="nom" />
+
+
+        </LinearLayout>
+    </LinearLayout>
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/shape_rounded"
+        android:layout_alignParentRight="true"
+        android:gravity="center"
+        android:padding="6dip"
+        >
+
+        <ImageView
+            android:id="@+id/realisateurImage"
+            android:layout_width="90dip"
+            android:layout_height="90dip"
+            android:scaleType="centerCrop"
+             />
+    </RelativeLayout>
+
+</RelativeLayout>

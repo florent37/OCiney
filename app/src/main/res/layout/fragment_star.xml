@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/fragmentStarContent"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/black">
+
+
+    <com.sothree.slidinguppanel.SlidingUpPanelLayout xmlns:sothree="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/slidingDrawer"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="bottom"
+        sothree:dragView="@+id/header"
+        sothree:overlay="true"
+        sothree:panelHeight="170dip"
+        sothree:paralaxOffset="0dip"
+        sothree:shadowHeight="4dp">
+
+        <!-- Ce qui va être afrfiché en background-->
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@android:color/transparent">
+            >
+
+            <include layout="@layout/fragment_star_fond" />
+        </RelativeLayout>
+
+        <!-- Le contenu la sliding-->
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@android:color/transparent">
+
+            <!-- L'entete sliding-->
+            <include layout="@layout/fragment_star_header" />
+
+            <!-- Le contenu du sliding-->
+            <LinearLayout
+                android:id="@+id/content"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_below="@+id/header"
+                android:layout_weight="1"
+                android:background="#e1e1e1"
+                android:orientation="vertical">
+
+
+            <include layout="@layout/fragment_star_content" />
+
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="6dip"
+                android:layout_below="@+id/header"
+                android:background="@drawable/movie_tile_shadow" />
+
+        </RelativeLayout>
+
+
+    </com.sothree.slidinguppanel.SlidingUpPanelLayout>
+
+</RelativeLayout>

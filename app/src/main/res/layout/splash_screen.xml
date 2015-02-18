@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:ttf="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#656565">
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:alpha="0.2"
+        android:background="@drawable/splash_stripes_repeat" />
+
+    <com.bdc.ociney.view.textview.TypefacedTextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dip"
+        android:gravity="center"
+        android:textColor="@color/textColor"
+        android:text="@string/app_chapo"
+        ttf:typeface="Roboto-Black.ttf" />
+
+    <View
+        android:id="@+id/splash"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:adjustViewBounds="true"
+        android:background="@drawable/gradient_black_60_black_20_90deg"
+        android:fitsSystemWindows="true" />
+
+    <RelativeLayout
+        android:id="@+id/splash_logo"
+        android:layout_width="175dip"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true">
+
+        <ImageView
+            android:id="@+id/glass"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_glass_reflect_color_big" />
+
+        <ImageView
+            android:id="@+id/txt"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="110dip"
+            android:src="@drawable/ic_txt_ociney" />
+
+    </RelativeLayout>
+
+    <ImageView
+        android:id="@+id/placeholder_image"
+        android:layout_width="64dip"
+        android:layout_height="64dip"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="50dip"
+        android:src="@drawable/ic_drawer_films" />
+</RelativeLayout>

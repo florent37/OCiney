@@ -1,0 +1,29 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <com.bdc.ociney.view.MovingImageView
+        android:id="@+id/image"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+
+    <!--
+    <com.test.pop_cine.app.view.textview.TypefacedTextView
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="TestCustomFont"
+        android:textColor="#FFF"
+        android:textSize="14dip"
+        ttf:typeface="fonts/Roboto-Thin.ttf" />
+
+    <com.test.pop_cine.app.view.textview.TypefacedTextView
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="TestCustomFont"
+        android:textColor="#FFF"
+        android:textSize="14dip"
+        ttf:typeface="fonts/Roboto-Bold.ttf"
+        android:layout_alignParentBottom="true"/>
+    -->
+</RelativeLayout>

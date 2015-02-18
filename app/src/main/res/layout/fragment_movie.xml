@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/fragmentMovieContent"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/black">
+
+
+    <com.sothree.slidinguppanel.SlidingUpPanelLayout xmlns:sothree="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/slidingDrawer"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="bottom"
+        sothree:dragView="@+id/header"
+        sothree:overlay="true"
+        sothree:panelHeight="175dip"
+        sothree:paralaxOffset="0dip"
+        sothree:shadowHeight="4dp">
+
+        <!-- Ce qui va être afrfiché en background-->
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@android:color/black">
+            >
+
+            <include layout="@layout/fragment_movie_fond" />
+        </RelativeLayout>
+
+        <!-- Le contenu la sliding-->
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@android:color/transparent">
+
+            <!-- L'entete sliding-->
+            <include layout="@layout/fragment_movie_header" />
+
+            <!-- Le contenu du sliding-->
+            <LinearLayout
+                android:id="@+id/content"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_below="@+id/header"
+                android:layout_weight="1"
+                android:background="@drawable/gradient_black_85_black_100"
+                android:orientation="vertical">
+
+                <include layout="@layout/fragment_movie_content" />
+
+            </LinearLayout>
+
+        </RelativeLayout>
+
+
+    </com.sothree.slidinguppanel.SlidingUpPanelLayout>
+
+</RelativeLayout>

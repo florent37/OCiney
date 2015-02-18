@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:ttf="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="85dip"
+    android:background="@android:color/white">
+
+    <RelativeLayout
+        android:id="@+id/movingView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <RelativeLayout
+            android:id="@+id/relative_image_fond"
+            android:layout_width="125dip"
+            android:layout_height="85dip">
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/gradient_placeholder" />
+
+            <ImageView
+                android:id="@+id/imageFond"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:adjustViewBounds="true"
+                android:fitsSystemWindows="true"
+                android:scaleType="centerCrop"
+                android:src="@drawable/ic_placeholder_people" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_alignParentRight="true"
+                android:background="@drawable/gradient_transparent_white_0deg" />
+
+        </RelativeLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="10dip"
+            android:layout_marginRight="10dip"
+            android:layout_toRightOf="@+id/relative_image_fond"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:id="@+id/ic_topstar"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:adjustViewBounds="true"
+                    android:alpha="0.5"
+                    android:fitsSystemWindows="true"
+                    android:paddingRight="5dip"
+                    android:src="@drawable/ic_topstar_1"
+                    android:visibility="gone" />
+
+                <com.bdc.ociney.view.textview.TypefacedTextView
+                    android:id="@+id/nameStar"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:ellipsize="end"
+                    android:lines="1"
+                    android:text="Prénom Nom"
+                    android:textColor="@color/black80"
+                    android:textSize="18sp"
+                    ttf:typeface="Roboto-Regular.ttf" />
+
+            </LinearLayout>
+
+            <com.bdc.ociney.view.textview.TypefacedTextView
+                android:id="@+id/role"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ellipsize="end"
+                android:lines="1"
+                android:text="Acteur / Réalisateur / Producteur exécutif"
+                android:textColor="@color/black50"
+                android:textSize="12sp"
+                ttf:typeface="Roboto-LightItalic.ttf" />
+        </LinearLayout>
+
+        <View
+            android:id="@+id/couronne"
+            android:layout_width="50dip"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentRight="true"
+            android:alpha=".05"
+            android:background="@drawable/ic_cropped_crown"
+            android:visibility="gone" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="5dip"
+            android:layout_alignParentTop="true"
+            android:background="@drawable/movie_tile_shadow" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="85dip"
+            android:alpha="0.075"
+            android:background="@drawable/gradient_transparent_black" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dip"
+            android:layout_alignParentBottom="true"
+            android:background="@color/white30" />
+    </RelativeLayout>
+</RelativeLayout>
