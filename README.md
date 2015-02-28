@@ -1,5 +1,7 @@
 # OCiney
 
+[![Android Arsenal](https://img.shields.io/badge/Android%20Arsenal-OCiney-brightgreen.svg?style=flat)](http://android-arsenal.com/details/3/1602)
+
 OCiney is a sample app implementing several UI and UX patterns.
 I was firstly built to test a few different implementations of a details page.
 
