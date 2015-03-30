@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="utf-8"?>
+<items version="2" >
+
+    <item
+        jar="/Users/florentchampigny/.gradle/caches/modules-2/files-2.1/com.github.chrisbanes.photoview/library/1.2.2/82eda228c92c1aab3c0c8626497f13baf249cdb4/library-1.2.2.jar"
+        jumboMode="false"
+        revision="21.0.2"
+        sha1="82eda228c92c1aab3c0c8626497f13baf249cdb4">
+        <dex dex="/Users/florentchampigny/Documents/OCiney/app/build/intermediates/pre-dexed/release/library-1.2.2-aebaa77ad11a85779c6e07f2928486fe6d9f4529.jar" />
+    </item>
+    <item
+        jar="/Users/florentchampigny/Documents/OCiney/app/libs/KenBurnsView-1.0.1.jar"
+        jumboMode="false"
+        revision="21.0.2"
+        sha1="28ef130d15f6f1a02bde0003365ac5b70c57567c">
+        <dex dex="/Users/florentchampigny/Documents/OCiney/app/build/intermediates/pre-dexed/release/KenBurnsView-1.0.1-3a1e85866922c03b39dbd2ce680031adfe840634.jar" />
+    </item>
+    <item
+        jar="/Users/florentchampigny/.gradle/caches/modules-2/files-2.1/com.squareup.retrofit/retrofit/1.7.1/168a878946d665200edc733ac715b1264a6cd7b6/retrofit-1.7.1.jar"
+        jumboMode="false"
+        revision="21.0.2"
+        sha1="168a878946d665200edc733ac715b1264a6cd7b6">
+        <dex dex="/Users/florentchampigny/Documents/OCiney/app/build/intermediates/pre-dexed/release/retrofit-1.7.1-74777151e5a2686732aa7b1bd05b4ff652973489.jar" />
+    </item>
+    <item
+        jar="/Users/florentchampigny/.gradle/caches/modules-2/files-2.1/com.google.code.gson/gson/2.3/5fc52c41ef0239d1093a1eb7c3697036183677ce/gson-2.3.jar"
+        jumboMode="false"
+        revision="21.0.2"
+        sha1="5fc52c41ef0239d1093a1eb7c3697036183677ce">
+        <dex dex="/Users/florentchampigny/Documents/OCiney/app/build/intermediates/pre-dexed/release/gson-2.3-47f978aec685dc9ee1cdbcdd9f7791a4e9213212.jar" />
+    </item>
+    <item
+        jar="/Users/florentchampigny/.gradle/caches/modules-2/files-2.1/com.squareup.okhttp/okhttp-urlconnection/2.0.0/afe8399d352713b66e597e9670c741d1e60ae923/okhttp-urlconnection-2.0.0.jar"
+        jumboMode="false"
+        revision="21.0.2"
+        sha1="afe8399d352713b66e597e9670c741d1e60ae923">
+        <dex dex="/Users/florentchampigny/Documents/OCiney/app/build/intermediates/pre-dexed/release/okhttp-urlconnection-2.0.0-5d54448ac4581af6af9f4e455c6db8abe60ef853.jar" />
+    </item>
+    <item
+        jar="/Users/florentchampigny/Documents/OCiney/app/build/intermediates/exploded-aar/com.crashlytics.sdk.android/crashlytics/2.0.1/classes.jar"
+        jumboMode="false"
+        revision="21.0.2"
+        sha1="1adf75e3d87301236c2d4de507b4a668092ff070">
+        <dex dex="/Users/florentchampigny/Documents/OCiney/app/build/intermediates/pre-dexed/release/classes-19a108638ef58aa80739117198e2e2cc15a442b4.jar" />
+    </item>
+    <item
+        jar="/Users/florentchampigny/Documents/OCiney/app/build/intermediates/exploded-aar/com.crashlytics.sdk.android/answers/1.0.1/classes.jar"
+        jumboMode="false"
+        revision="21.0.2"
+        sha1="7363bd9461c166e18592b58547720fbad8d4b0bc">
+        <dex dex="/Users/florentchampigny/Documents/OCiney/app/build/intermediates/pre-dexed/release/classes-cc92b0a78c8149b78eb38760e10e3a00d9125536.jar" />
+    </item>
+    <item
+        jar="/Users/florentchampigny/.gradle/caches/modules-2/files-2.1/com.nineoldandroids/library/2.4.0/e9b63380f3a242dbdbf103a2355ad7e43bad17cb/library-2.4.0.jar"
+        jumboMode="false"
+        revision="21.0.2"
+        sha1="e9b63380f3a242dbdbf103a2355ad7e43bad17cb">
+        <dex dex="/Users/florentchampigny/Documents/OCiney/app/build/intermediates/pre-dexed/release/library-2.4.0-cb351a9a3ca66a2aae34dce7348fed7442a510b2.jar" />
+    </item>
+    <item
+        jar="/Users/florentchampigny/.gradle/caches/modules-2/files-2.1/com.squareup.picasso/picasso/2.4.0/f36d2d4e3a36b3259aaf9d004d29b4cdc6c1bfb2/picasso-2.4.0.jar"
+        jumboMode="false"
+        revision="21.0.2"
+        sha1="f36d2d4e3a36b3259aaf9d004d29b4cdc6c1bfb2">
+        <dex dex="/Users/florentchampigny/Documents/OCiney/app/build/intermediates/pre-dexed/release/picasso-2.4.0-9412a477561cf23df788aad1bf62d01f0ad58c16.jar" />
+    </item>
+    <item
+        jar="/Users/florentchampigny/android/sdk/extras/android/m2repository/com/android/support/support-annotations/21.0.2/support-annotations-21.0.2.jar"
+        jumboMode="false"
+        revision="21.0.2"
+        sha1="99373741f99a0556ee293c41e8faa1ca3ae8a4e6">
+        <dex dex="/Users/florentchampigny/Documents/OCiney/app/build/intermediates/pre-dexed/release/support-annotations-21.0.2-f184fb35ba1d8e1ccea2b5cd21d40893b3f9cde2.jar" />
+    </item>
+    <item
+        jar="/Users/florentchampigny/.gradle/caches/modules-2/files-2.1/commons-codec/commons-codec/1.10/4b95f4897fa13f2cd904aee711aeafc0c5295cd8/commons-codec-1.10.jar"
+        jumboMode="false"
+        revision="21.0.2"
+        sha1="4b95f4897fa13f2cd904aee711aeafc0c5295cd8">
+        <dex dex="/Users/florentchampigny/Documents/OCiney/app/build/intermediates/pre-dexed/release/commons-codec-1.10-fbeeadf624e5156b902f061a0968d1a7e580f82b.jar" />
+    </item>
+    <item
+        jar="/Users/florentchampigny/Documents/OCiney/app/build/intermediates/exploded-aar/io.fabric.sdk.android/fabric/1.0.1/classes.jar"
+        jumboMode="false"
+        revision="21.0.2"
+        sha1="7b46e0b1175dbb7d47f130d6ed14097340e1b77f">
+        <dex dex="/Users/florentchampigny/Documents/OCiney/app/build/intermediates/pre-dexed/release/classes-e5fa7d3e19eaf42f8e78fc18bf25bd193bc0ae00.jar" />
+    </item>
+    <item
+        jar="/Users/florentchampigny/.gradle/caches/modules-2/files-2.1/com.squareup.okhttp/okhttp/2.0.0/4c8d1536dba3812cc1592090dc20c47a4ed3c35e/okhttp-2.0.0.jar"
+        jumboMode="false"
+        revision="21.0.2"
+        sha1="4c8d1536dba3812cc1592090dc20c47a4ed3c35e">
+        <dex dex="/Users/florentchampigny/Documents/OCiney/app/build/intermediates/pre-dexed/release/okhttp-2.0.0-72c2fb0d7ca0e955b8fd487a6538ebefb9d82d14.jar" />
+    </item>
+    <item
+        jar="/Users/florentchampigny/.gradle/caches/modules-2/files-2.1/com.squareup.okio/okio/1.0.0/2534c458682c73f5b9871131ab3098d3f987ca3/okio-1.0.0.jar"
+        jumboMode="false"
+        revision="21.0.2"
+        sha1="02534c458682c73f5b9871131ab3098d3f987ca3">
+        <dex dex="/Users/florentchampigny/Documents/OCiney/app/build/intermediates/pre-dexed/release/okio-1.0.0-7dfe78a90a95fa0f3cf821475bdd0edf0e263793.jar" />
+    </item>
+    <item
+        jar="/Users/florentchampigny/Documents/OCiney/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/21.0.2/classes.jar"
+        jumboMode="false"
+        revision="21.0.2"
+        sha1="7ae2d38807a43b2f2185ff4089a92c790b579e54">
+        <dex dex="/Users/florentchampigny/Documents/OCiney/app/build/intermediates/pre-dexed/release/classes-28560bb8e7637e42df4117756ac18b58f777844f.jar" />
+    </item>
+    <item
+        jar="/Users/florentchampigny/Documents/OCiney/app/build/intermediates/exploded-aar/com.crashlytics.sdk.android/beta/1.0.1/classes.jar"
+        jumboMode="false"
+        revision="21.0.2"
+        sha1="ac8bb9f7af7ca5dae03650dc1b43a305e1df2f1b">
+        <dex dex="/Users/florentchampigny/Documents/OCiney/app/build/intermediates/pre-dexed/release/classes-d9407333b819e10a1b03a536001161b56ca25b8e.jar" />
+    </item>
+    <item
+        jar="/Users/florentchampigny/Documents/OCiney/app/build/intermediates/exploded-aar/com.android.support/support-v4/21.0.2/libs/internal_impl-21.0.2.jar"
+        jumboMode="false"
+        revision="21.0.2"
+        sha1="962e8b12569c56dbdcf8367eb4eac8bb129cd18f">
+        <dex dex="/Users/florentchampigny/Documents/OCiney/app/build/intermediates/pre-dexed/release/internal_impl-21.0.2-cede32cce1361b69783d3b95bb2baaca390cdf84.jar" />
+    </item>
+    <item
+        jar="/Users/florentchampigny/Documents/OCiney/app/build/intermediates/exploded-aar/com.sothree.slidinguppanel/library/2.0.4/classes.jar"
+        jumboMode="false"
+        revision="21.0.2"
+        sha1="0e546fc8dc1f68c39d41c544e2155c797b558492">
+        <dex dex="/Users/florentchampigny/Documents/OCiney/app/build/intermediates/pre-dexed/release/classes-a9cee681c9659a7cc9df8f18843ff26dac16db7f.jar" />
+    </item>
+    <item
+        jar="/Users/florentchampigny/Documents/OCiney/app/build/intermediates/exploded-aar/com.android.support/support-v4/21.0.2/classes.jar"
+        jumboMode="false"
+        revision="21.0.2"
+        sha1="d1bf02de1c56d942e7a9d093b8610ba1ef4128e3">
+        <dex dex="/Users/florentchampigny/Documents/OCiney/app/build/intermediates/pre-dexed/release/classes-0be97efa21893d8230cee40977e508941d1be437.jar" />
+    </item>
+
+</items>

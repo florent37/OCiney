@@ -62,7 +62,7 @@ dependencies {
     compile 'com.squareup.retrofit:retrofit:1.7.1'
     compile 'com.squareup.okhttp:okhttp-urlconnection:2.0.0'
     compile 'com.squareup.okhttp:okhttp:2.0.0'
-    compile 'com.sothree.slidinguppanel:library:+'
+    compile 'com.sothree.slidinguppanel:library:2.0.4'
     compile 'com.github.chrisbanes.photoview:library:1.2.2'
 
     compile fileTree(dir: 'libs', include: ['*.jar'])
