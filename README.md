@@ -5,6 +5,8 @@
 OCiney is a sample app implementing several UI and UX patterns.
 I was firstly built to test a few different implementations of a details page.
 
+<a href="https://github.com/florent37/OCiney/releases/download/1.0/ociney.apk">Download the APK from Github</a>
+
 ![alt text](https://raw.githubusercontent.com/florent37/OCiney/master/images/00_films_small.png?raw=true)
 ![alt text](https://raw.githubusercontent.com/florent37/OCiney/master/images/01_film_small.png?raw=true)
 ![alt text](https://raw.githubusercontent.com/florent37/OCiney/master/images/02_salles_small.png?raw=true)
