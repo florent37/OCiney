@@ -1,8 +1,8 @@
 package com.bdc.ociney.adapter;
 
-import android.app.Activity;
 import android.graphics.drawable.BitmapDrawable;
 import android.os.Bundle;
+import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentStatePagerAdapter;
@@ -15,9 +15,13 @@ import android.widget.TextView;
 import com.bdc.ociney.R;
 import com.bdc.ociney.modele.Media;
 import com.bdc.ociney.modele.Movie.Movie;
+import com.google.gson.Gson;
 import com.squareup.picasso.Picasso;
 
 import java.util.List;
+
+import butterknife.BindView;
+import butterknife.ButterKnife;
 
 /**
  * Created by florentchampigny on 01/05/2014.
@@ -25,16 +29,14 @@ import java.util.List;
 
 public class BandesAnnoncesPagerAdapter extends FragmentStatePagerAdapter {
 
-    List<Media> bandesAnnonces;
-    Activity activity;
-    OnBandeAnnonceClickedListener listener;
-    Movie movie;
+    final List<Media> bandesAnnonces;
+    final OnBandeAnnonceClickedListener listener;
+    final Movie movie;
+    final boolean theater;
     BitmapDrawable bobine;
-    boolean theater = false;
 
-    public BandesAnnoncesPagerAdapter(Activity activity, FragmentManager fm, List<Media> bandesAnnonces, Movie movie, OnBandeAnnonceClickedListener listener, boolean theater) {
+    public BandesAnnoncesPagerAdapter(FragmentManager fm, List<Media> bandesAnnonces, Movie movie, OnBandeAnnonceClickedListener listener, boolean theater) {
         super(fm);
-        this.activity = activity;
         this.bandesAnnonces = bandesAnnonces;
         this.listener = listener;
         this.movie = movie;
@@ -47,49 +49,7 @@ public class BandesAnnoncesPagerAdapter extends FragmentStatePagerAdapter {
 
     @Override
     public Fragment getItem(int position) {
-        final int p = position;
-
-        return new Fragment() {
-            @Override
-            public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                                     Bundle savedInstanceState) {
-
-                final Media bandeAnnonce = bandesAnnonces.get(p);
-
-                View view = null;
-                if (theater)
-                    view = View.inflate(getActivity(), R.layout.bande_annonce_pager_theater, null);
-                else
-                    view = View.inflate(getActivity(), R.layout.bande_annonce_pager_movie, null);
-
-                ImageView image = (ImageView) view.findViewById(R.id.image);
-                String urlImage = bandeAnnonce.getThumbnail().getHref(activity.getResources().getInteger(R.integer.fragment_movie_bande_annonce_height));
-                Picasso.with(getActivity()).load(urlImage).into(image);
-
-                /*
-                view.findViewById(R.id.bobineTop).setBackgroundDrawable(bobine);
-                view.findViewById(R.id.bobineBottom).setBackgroundDrawable(bobine);
-                */
-
-                String titre = bandeAnnonce.getTitle().replace(movie.getTitle(), "").replace(movie.getOriginalTitle(), "").replace("\"\"", "").replace(":", "").trim();
-                if (titre.startsWith("-"))
-                    titre = titre.substring(1, titre.length()).trim();
-
-                TextView title = (TextView) view.findViewById(R.id.title);
-                title.setText(titre);
-
-                view.setOnClickListener(new View.OnClickListener() {
-                                            @Override
-                                            public void onClick(View view) {
-                                                listener.onBandeAnnonceClicked(bandeAnnonce);
-                                            }
-                                        }
-                );
-
-                return view;
-            }
-        };
-
+        return BandeAnnonceFragment.newInstance(position, bandesAnnonces.get(position), movie, theater).setListener(listener);
     }
 
     @Override
@@ -98,6 +58,76 @@ public class BandesAnnoncesPagerAdapter extends FragmentStatePagerAdapter {
     }
 
     public interface OnBandeAnnonceClickedListener {
-        public void onBandeAnnonceClicked(Media bandeAnnonce);
+        void onBandeAnnonceClicked(Media bandeAnnonce);
+    }
+
+    public static class BandeAnnonceFragment extends Fragment {
+
+        @BindView(R.id.image)
+        ImageView image;
+        @BindView(R.id.title)
+        TextView title;
+        private OnBandeAnnonceClickedListener listener;
+
+        public static BandeAnnonceFragment newInstance(int position, Media media, Movie movie, boolean theater) {
+            final Bundle args = new Bundle();
+            args.putInt("position", position);
+            args.putBoolean("theater", theater);
+            final Gson gson = new Gson();
+            args.putString("media", gson.toJson(media));
+            args.putString("movie", gson.toJson(movie));
+            final BandeAnnonceFragment fragment = new BandeAnnonceFragment();
+            fragment.setArguments(args);
+            return fragment;
+        }
+
+        public BandeAnnonceFragment setListener(OnBandeAnnonceClickedListener listener) {
+            this.listener = listener;
+            return this;
+        }
+
+        @Override
+        public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
+            super.onViewCreated(view, savedInstanceState);
+            ButterKnife.bind(this, view);
+
+            final Gson gson = new Gson();
+            final Media bandeAnnonce = gson.fromJson(getArguments().getString("media"), Media.class);
+            final Movie movie = gson.fromJson(getArguments().getString("movie"), Movie.class);
+
+            String urlImage = bandeAnnonce.getThumbnail().getHref(getContext().getResources().getInteger(R.integer.fragment_movie_bande_annonce_height));
+            Picasso.with(getActivity()).load(urlImage).into(image);
+
+                /*
+                view.findViewById(R.id.bobineTop).setBackgroundDrawable(bobine);
+                view.findViewById(R.id.bobineBottom).setBackgroundDrawable(bobine);
+                */
+
+
+            String titre = bandeAnnonce.getTitle().replace(movie.getTitle(), "").replace(movie.getOriginalTitle(), "").replace("\"\"", "").replace(":", "").trim();
+            if (titre.startsWith("-"))
+                titre = titre.substring(1, titre.length()).trim();
+
+            title.setText(titre);
+
+            view.setOnClickListener(new View.OnClickListener() {
+                                        @Override
+                                        public void onClick(View view) {
+                                            if (listener != null) {
+                                                listener.onBandeAnnonceClicked(bandeAnnonce);
+                                            }
+                                        }
+                                    }
+            );
+        }
+
+        @Override
+        public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
+            if (getArguments().getBoolean("theater"))
+                return inflater.inflate(R.layout.bande_annonce_pager_theater, container, false);
+            else
+                return inflater.inflate(R.layout.bande_annonce_pager_movie, container, false);
+        }
+
     }
 }

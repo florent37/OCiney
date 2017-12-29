@@ -13,7 +13,7 @@ import com.google.gson.reflect.TypeToken;
 import com.bdc.ociney.R;
 import com.bdc.ociney.activity.MovieActivity;
 import com.bdc.ociney.adapter.ObjectAdapter;
-import com.bdc.ociney.fragment.core.BetterFragment;
+import com.bdc.ociney.fragment.core.BaseFragment;
 import com.bdc.ociney.modele.Movie.Movie;
 import com.bdc.ociney.modele.Theater.Theater;
 import com.bdc.ociney.modele.Theater.TheaterShowtime;
@@ -25,7 +25,7 @@ import java.util.Date;
 import java.util.List;
 
 
-public class TheaterFragment extends BetterFragment implements AdapterView.OnItemClickListener {
+public class TheaterFragment extends BaseFragment implements AdapterView.OnItemClickListener {
 
     public static final String THEATER = "THEATER";
 

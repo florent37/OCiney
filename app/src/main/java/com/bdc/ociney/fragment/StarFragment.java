@@ -8,7 +8,7 @@ import android.os.AsyncTask;
 import android.os.Build;
 import android.os.Bundle;
 import android.support.v4.view.ViewPager;
-import android.support.v7.app.ActionBarActivity;
+
 import android.support.v7.widget.Toolbar;
 import android.view.Display;
 import android.view.LayoutInflater;
@@ -20,6 +20,8 @@ import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
+import com.bdc.ociney.core.BaseActivity;
+import com.github.florent37.androidanalytics.Analytics;
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 import com.bdc.ociney.R;
@@ -28,7 +30,7 @@ import com.bdc.ociney.activity.MovieActivity;
 import com.bdc.ociney.activity.StarActivity;
 import com.bdc.ociney.adapter.ImagesPagerAdapter;
 import com.bdc.ociney.adapter.ObjectAdapter;
-import com.bdc.ociney.fragment.core.BetterFragment;
+import com.bdc.ociney.fragment.core.BaseFragment;
 import com.bdc.ociney.modele.Media;
 import com.bdc.ociney.modele.Movie.Movie;
 import com.bdc.ociney.modele.Participation;
@@ -36,7 +38,6 @@ import com.bdc.ociney.modele.Person.PersonFull;
 import com.bdc.ociney.service.Service;
 import com.bdc.ociney.utils.DateUtils;
 import com.bdc.ociney.utils.actionbar.ActionBarHider;
-import com.bdc.ociney.utils.transformation.BlurTransformation;
 import com.bdc.ociney.utils.transformation.CircleTransform;
 import com.bdc.ociney.utils.transformation.ParallaxTransformer;
 import com.bdc.ociney.view.CellJaquette;
@@ -50,8 +51,10 @@ import java.lang.reflect.Field;
 import java.util.ArrayList;
 import java.util.List;
 
+import jp.wasabeef.picasso.transformations.BlurTransformation;
 
-public class StarFragment extends BetterFragment {
+
+public class StarFragment extends BaseFragment {
 
     public static final String PERSON = "person";
     private static final int NOMBRE_JAQUETTE_AFFICHE = 7;
@@ -244,10 +247,12 @@ public class StarFragment extends BetterFragment {
 
             imagesUrl.add(urlFond);
 
-            Picasso.with(getActivity()).load(urlFond).transform(new BlurTransformation()).into(imageFond);
+            Picasso.with(getActivity()).load(urlFond).transform(new BlurTransformation(getContext())).into(imageFond);
         }
 
         if (person.getFullName() != null) {
+            Analytics.screen("star_"+person.getFullName());
+
             String name = "";
 
             if (person.getFullName().getGiven() != null)
@@ -260,7 +265,7 @@ public class StarFragment extends BetterFragment {
             this.nameStar.setText(name);
 
             // On met le nom de la star dans l'action bar
-            ((ActionBarActivity) getActivity()).getSupportActionBar().setTitle(name);
+            ((BaseActivity) getActivity()).getSupportActionBar().setTitle(name);
         }
 
         this.top_rank.setVisibility(View.GONE);
@@ -435,9 +440,8 @@ public class StarFragment extends BetterFragment {
                 imagesUrl.add(m.getThumbnail().getHref(600));
         }
 
-        imagesAdapter = new ImagesPagerAdapter(getChildFragmentManager(), getActivity(), imagesUrl);
+        imagesAdapter = new ImagesPagerAdapter(getChildFragmentManager(), imagesUrl);
         viewPager.setAdapter(imagesAdapter);
-
     }
 
     private void afficherJaquette(View view, int i) {

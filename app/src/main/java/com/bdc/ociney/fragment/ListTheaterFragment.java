@@ -19,7 +19,7 @@ import com.google.gson.reflect.TypeToken;
 import com.bdc.ociney.R;
 import com.bdc.ociney.activity.TheaterMovieActivity;
 import com.bdc.ociney.adapter.ObjectAdapter;
-import com.bdc.ociney.fragment.core.BetterFragment;
+import com.bdc.ociney.fragment.core.BaseFragment;
 import com.bdc.ociney.modele.Theater.Theater;
 import com.bdc.ociney.task.LoadTheatersFavorisTask;
 import com.bdc.ociney.task.LoadTheatersTask;
@@ -32,7 +32,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 
-public class ListTheaterFragment extends BetterFragment implements AdapterView.OnItemClickListener, SearchTheatersTask.SearchTheatersTaskCallBack, LoadTheatersFavorisTask.LoadTheatersFavorisTaskCallBack, LocationUtils.LocationUtilsCallBack, LoadTheatersTask.LoadTheatersTaskCallBack, ObjectAdapter.ObjectAdapterLoadMore {
+public class ListTheaterFragment extends BaseFragment implements AdapterView.OnItemClickListener, SearchTheatersTask.SearchTheatersTaskCallBack, LoadTheatersFavorisTask.LoadTheatersFavorisTaskCallBack, LocationUtils.LocationUtilsCallBack, LoadTheatersTask.LoadTheatersTaskCallBack, ObjectAdapter.ObjectAdapterLoadMore {
 
     public static final String FAVORIS = "favoris";
     public static final String FAVORIS_STRINGS = "favoris_string";

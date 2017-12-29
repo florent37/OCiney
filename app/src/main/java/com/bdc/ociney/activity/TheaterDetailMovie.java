@@ -9,7 +9,7 @@ import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
 import android.support.v4.view.ViewPager;
-import android.support.v7.app.ActionBarActivity;
+
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuInflater;
@@ -22,6 +22,7 @@ import android.widget.RatingBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.bdc.ociney.core.BaseActivity;
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 import com.bdc.ociney.R;
@@ -48,7 +49,7 @@ import java.util.Locale;
 /**
  * Created by florentchampigny on 21/04/2014.
  */
-public class TheaterDetailMovie extends ActionBarActivity implements BandesAnnoncesPagerAdapter.OnBandeAnnonceClickedListener, View.OnClickListener, LoadMovieFullTask.LoadMovieFullTaskCallBack {
+public class TheaterDetailMovie extends BaseActivity implements BandesAnnoncesPagerAdapter.OnBandeAnnonceClickedListener, View.OnClickListener, LoadMovieFullTask.LoadMovieFullTaskCallBack {
 
     public static final String MOVIE = "movie";
     public static final String THEATER = "theater";
@@ -190,7 +191,7 @@ public class TheaterDetailMovie extends ActionBarActivity implements BandesAnnon
     }
 
     private void remplirBandesAnnonces(Movie m) {
-        bandesAnnonces.setAdapter(new BandesAnnoncesPagerAdapter(this, getSupportFragmentManager(), m.getBandesAnnonces(), m, this, true));
+        bandesAnnonces.setAdapter(new BandesAnnoncesPagerAdapter(getSupportFragmentManager(), m.getBandesAnnonces(), m, this, true));
         bandesAnnonces.setPageTransformer(false, new ParallaxTransformer(R.id.parallaxContent));
     }
 

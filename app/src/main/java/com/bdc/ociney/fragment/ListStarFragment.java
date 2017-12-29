@@ -16,7 +16,7 @@ import com.google.gson.reflect.TypeToken;
 import com.bdc.ociney.R;
 import com.bdc.ociney.activity.StarActivity;
 import com.bdc.ociney.adapter.ObjectAdapter;
-import com.bdc.ociney.fragment.core.BetterFragment;
+import com.bdc.ociney.fragment.core.BaseFragment;
 import com.bdc.ociney.modele.Person.PersonFull;
 import com.bdc.ociney.modele.Person.PersonSmall;
 import com.bdc.ociney.task.LoadStarsFavorisTask;
@@ -29,7 +29,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 
-public class ListStarFragment extends BetterFragment implements AdapterView.OnItemClickListener, LoadStarsFavorisTask.LoadStarsFavorisTaskCallBack, ObjectAdapter.ObjectAdapterLoadMore, LoadStarsTask.LoadStarTaskCallBack, SearchStarsTask.SearchStarsTaskCallBack {
+public class ListStarFragment extends BaseFragment implements AdapterView.OnItemClickListener, LoadStarsFavorisTask.LoadStarsFavorisTaskCallBack, ObjectAdapter.ObjectAdapterLoadMore, LoadStarsTask.LoadStarTaskCallBack, SearchStarsTask.SearchStarsTaskCallBack {
 
     public static final String PERSONS = "persons";
     public static final String FAVORIS = "favoris";

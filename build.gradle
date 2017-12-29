@@ -2,22 +2,33 @@
 
 buildscript {
     repositories {
-        mavenCentral()
+        jcenter()
+        maven { url 'https://maven.fabric.io/public' }
     }
     dependencies {
-        classpath 'com.android.tools.build:gradle:1.0.0'
+        classpath 'com.android.tools.build:gradle:2.3.3'
+        classpath 'me.tatarka:gradle-retrolambda:3.7.0'
+        classpath 'io.fabric.tools:gradle:1.+'
+        classpath 'com.google.gms:google-services:3.0.0'
     }
-}
-
-ext{
-    ANDROID_BUILD_MIN_SDK_VERSION=14
-    ANDROID_BUILD_TARGET_SDK_VERSION=21
-    ANDROID_BUILD_TOOLS_VERSION="21.0.2"
-    ANDROID_BUILD_SDK_VERSION=21
 }
 
 allprojects {
     repositories {
-        mavenCentral()
+        jcenter()
+        maven { url "https://jitpack.io" }
+        maven { url "https://maven.google.com" }
+        maven { url 'https://maven.fabric.io/public' }
     }
+}
+
+task clean(type: Delete) {
+    delete rootProject.buildDir
+}
+
+ext{
+    ANDROID_BUILD_MIN_SDK_VERSION=14
+    ANDROID_BUILD_TARGET_SDK_VERSION=26
+    ANDROID_BUILD_TOOLS_VERSION="26.0.0"
+    ANDROID_BUILD_SDK_VERSION=26
 }

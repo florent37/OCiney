@@ -8,7 +8,7 @@ import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentStatePagerAdapter;
 import android.support.v4.view.ViewPager;
-import android.support.v7.app.ActionBarActivity;
+
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuInflater;
@@ -18,6 +18,7 @@ import android.view.animation.Animation;
 import android.view.animation.RotateAnimation;
 import android.widget.Toast;
 
+import com.bdc.ociney.core.BaseActivity;
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 import com.bdc.ociney.R;
@@ -34,7 +35,7 @@ import java.util.HashMap;
 import java.util.List;
 
 
-public class TheaterMovieActivity extends ActionBarActivity implements LoadTheaterMoviesTask.LoadTheaterMoviesTaskCallBack {
+public class TheaterMovieActivity extends BaseActivity implements LoadTheaterMoviesTask.LoadTheaterMoviesTaskCallBack {
 
     //public static Theater theaterStatic;
 

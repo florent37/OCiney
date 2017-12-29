@@ -18,7 +18,7 @@ import com.bdc.ociney.R;
 import com.bdc.ociney.activity.AppFragmentActivity;
 import com.bdc.ociney.activity.MovieActivity;
 import com.bdc.ociney.adapter.ObjectAdapter;
-import com.bdc.ociney.fragment.core.BetterFragment;
+import com.bdc.ociney.fragment.core.BaseFragment;
 import com.bdc.ociney.modele.Movie.Movie;
 import com.bdc.ociney.task.LoadMoviesFavorisTask;
 import com.bdc.ociney.task.LoadMoviesTask;
@@ -31,15 +31,17 @@ import java.util.ArrayList;
 import java.util.List;
 
 
-public class ListMoviesFragment extends BetterFragment implements AbsListView.OnScrollListener, LoadMoviesFavorisTask.LoadMoviesFavorisTaskCallBack, AdapterView.OnItemClickListener, ObjectAdapter.ObjectAdapterLoadMore, SearchMoviesTask.SearchMoviesTaskCallBack, LoadMoviesTask.LoadMoviesTaskCallBack {
+public class ListMoviesFragment extends BaseFragment implements AbsListView.OnScrollListener, LoadMoviesFavorisTask.LoadMoviesFavorisTaskCallBack, AdapterView.OnItemClickListener, ObjectAdapter.ObjectAdapterLoadMore, SearchMoviesTask.SearchMoviesTaskCallBack, LoadMoviesTask.LoadMoviesTaskCallBack {
 
     public static final String MOVIES = "movies";
     public static final String FAVORIS = "favoris";
     public static final String NOW_SHOWING = "nowshowing";
     public static final String FAVORIS_STRINGS = "favoris_string";
+
     static int MOVIE_CELL_IMAGE_FOND_HEIGHT;
     static int MOVIE_PARALLAX_SPEED = 100;
     public int page = 1;
+
     List<Movie> movies;
     ObjectAdapter<Movie> adapter;
     AbsListView list;
@@ -80,11 +82,8 @@ public class ListMoviesFragment extends BetterFragment implements AbsListView.On
     }
 
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                             Bundle savedInstanceState) {
-
-        View view = inflater.inflate(R.layout.fragment_list,
-                container, false);
+    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
+        View view = inflater.inflate(R.layout.fragment_list, container, false);
 
         setFragmentView(view);
 

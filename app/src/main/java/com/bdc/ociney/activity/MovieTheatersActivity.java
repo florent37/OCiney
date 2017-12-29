@@ -4,19 +4,20 @@ import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.support.v4.app.FragmentTransaction;
-import android.support.v7.app.ActionBarActivity;
+
 import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
 
 import com.bdc.ociney.R;
+import com.bdc.ociney.core.BaseActivity;
 import com.bdc.ociney.fragment.MovieFragment;
 import com.bdc.ociney.fragment.MovieTheatersFragment;
-import com.bdc.ociney.fragment.core.BetterFragment;
+import com.bdc.ociney.fragment.core.BaseFragment;
 
 
-public class MovieTheatersActivity extends ActionBarActivity {
+public class MovieTheatersActivity extends BaseActivity {
 
-    BetterFragment fragment;
+    BaseFragment fragment;
     Toolbar toolbar;
 
     @Override
@@ -37,7 +38,7 @@ public class MovieTheatersActivity extends ActionBarActivity {
 
     }
 
-    public void ajouterFragment(BetterFragment fragment) {
+    public void ajouterFragment(BaseFragment fragment) {
 
     }
 

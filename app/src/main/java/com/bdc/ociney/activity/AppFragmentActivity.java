@@ -9,9 +9,9 @@ import android.graphics.PorterDuff;
 import android.graphics.drawable.ColorDrawable;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
-import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v4.widget.DrawerLayout;
-import android.support.v7.app.ActionBarActivity;
+import android.support.v7.app.ActionBarDrawerToggle;
+import android.support.v7.widget.AppCompatDrawableManager;
 import android.support.v7.widget.SearchView;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
@@ -24,13 +24,14 @@ import android.widget.TextView;
 
 import com.bdc.ociney.R;
 import com.bdc.ociney.adapter.SpinnerActionBar;
+import com.bdc.ociney.core.BaseActivity;
 import com.bdc.ociney.database.AccessBaseFavoris;
 import com.bdc.ociney.database.BaseFavoris;
 import com.bdc.ociney.fragment.CreditsFragment;
 import com.bdc.ociney.fragment.ListMoviesFragment;
 import com.bdc.ociney.fragment.ListStarFragment;
 import com.bdc.ociney.fragment.ListTheaterFragment;
-import com.bdc.ociney.fragment.core.BetterFragment;
+import com.bdc.ociney.fragment.core.BaseFragment;
 import com.bdc.ociney.modele.Movie.Movie;
 import com.bdc.ociney.modele.Person.PersonFull;
 import com.bdc.ociney.task.LoadListStarTask;
@@ -39,17 +40,24 @@ import com.bdc.ociney.view.textview.TypefacedTextView;
 import java.util.ArrayList;
 import java.util.List;
 
+import butterknife.BindView;
+import butterknife.ButterKnife;
 
-public class AppFragmentActivity extends ActionBarActivity implements View.OnClickListener, ActionBar.OnNavigationListener, LoadListStarTask.LoadListStarTaskCallBack {
+
+public class AppFragmentActivity extends BaseActivity implements View.OnClickListener, ActionBar.OnNavigationListener, LoadListStarTask.LoadListStarTaskCallBack {
 
     private static final int POSITION_NOW_SHOWING = 0;
     private static final int POSITION_COMMING_SOON = 1;
+
     public static String actionBarTitle = "";
     public static String actionBarSubTitle = "";
     public static List<Movie> moviesNowShowing = new ArrayList<Movie>();
     public static List<Movie> moviesCommingSoon = new ArrayList<Movie>();
-    BetterFragment activeFragment;
+    BaseFragment activeFragment;
+
+    @BindView(R.id.drawer_layout)
     DrawerLayout drawer;
+
     ActionBarDrawerToggle drawerToggle;
     boolean firstTime = true;
 
@@ -59,9 +67,26 @@ public class AppFragmentActivity extends ActionBarActivity implements View.OnCli
     int navigationMode = ActionBar.NAVIGATION_MODE_LIST;
     boolean displayTitle = false;
 
-    private Toolbar toolbar;
-    private Spinner spinner;
-    View drawerStars, drawerMovies, drawerTheaters, drawerFavoris, drawerCredits;
+    @BindView(R.id.toolbar)
+    Toolbar toolbar;
+
+    @BindView(R.id.spinner_nav)
+    Spinner spinner;
+
+    @BindView(R.id.drawerStars)
+    View drawerStars;
+
+    @BindView(R.id.drawerMovies)
+    View drawerMovies;
+
+    @BindView(R.id.drawerTheaters)
+    View drawerTheaters;
+
+    @BindView(R.id.drawerFavoris)
+    View drawerFavoris;
+
+    @BindView(R.id.drawerCredits)
+    View drawerCredits;
 
     String recherchePlaceholder = "";
 
@@ -70,18 +95,25 @@ public class AppFragmentActivity extends ActionBarActivity implements View.OnCli
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
         setContentView(R.layout.fragment_activity);
-        toolbar = (Toolbar) findViewById(R.id.toolbar);
+        ButterKnife.bind(this);
+
         setSupportActionBar(toolbar);
         toolbar.setTitleTextColor(Color.WHITE);
         getSupportActionBar().setDisplayShowTitleEnabled(false);
-        charger();
-        remplir();
+        findViewById(R.id.left_drawer).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+            }
+        });
+
+        ajouterFragment(ListMoviesFragment.newInstance(moviesNowShowing, true));
+
         ajouterListener();
 
-        TypedArray a = getTheme().obtainStyledAttributes(R.style.AppTheme, new int[] {R.attr.homeAsUpIndicator});
-        Drawable drawable = getResources().getDrawable(a.getResourceId(0, 0));
+        TypedArray a = getTheme().obtainStyledAttributes(R.style.AppTheme, new int[]{R.attr.homeAsUpIndicator});
+        Drawable drawable = AppCompatDrawableManager.get().getDrawable(this, a.getResourceId(0, 0));
         drawable.setColorFilter(getResources().getColor(android.R.color.white), PorterDuff.Mode.SRC_IN);
         drawerToggle.setHomeAsUpIndicator(drawable);
 
@@ -89,36 +121,15 @@ public class AppFragmentActivity extends ActionBarActivity implements View.OnCli
 
     }
 
-    public void ajouterFragment(BetterFragment fragment) {
-
+    public void ajouterFragment(BaseFragment fragment) {
         if (activeFragment != null)
             activeFragment.onPause();
 
         activeFragment = fragment;
 
         getSupportFragmentManager().beginTransaction()
-        .replace(R.id.fragmentLayout, fragment)
-        .commitAllowingStateLoss();
-    }
-
-    private void charger() {
-        drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
-        findViewById(R.id.left_drawer).setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-
-            }
-        });
-        drawerStars = findViewById(R.id.drawerStars);
-        drawerMovies = findViewById(R.id.drawerMovies);
-        drawerTheaters = findViewById(R.id.drawerTheaters);
-        drawerFavoris = findViewById(R.id.drawerFavoris);
-        drawerCredits = findViewById(R.id.drawerCredits);
-        spinner = (Spinner) findViewById(R.id.spinner_nav);
-    }
-
-    private void remplir() {
-        ajouterFragment(ListMoviesFragment.newInstance(moviesNowShowing, true));
+                .replace(R.id.fragmentLayout, fragment)
+                .commitAllowingStateLoss();
     }
 
     private void viderTitresDrawer() {
@@ -479,50 +490,55 @@ public class AppFragmentActivity extends ActionBarActivity implements View.OnCli
             if (!favoris && (activeFragment instanceof ListMoviesFragment || activeFragment instanceof ListStarFragment || activeFragment instanceof ListTheaterFragment)) {
                 inflater.inflate(R.menu.movie_list_menu, menu);
 
+                /*
                 final MenuItem searchItem = menu.findItem(R.id.search);
-                final SearchView searchView = (SearchView) searchItem.getActionView();
+                if (searchItem != null) {
+
+                    final SearchView searchView = (SearchView) searchItem.getActionView();
 
 
-                SearchView.SearchAutoComplete theTextArea = (SearchView.SearchAutoComplete)searchView.findViewById(R.id.search_src_text);
-                theTextArea.setTextColor(Color.WHITE);
-                theTextArea.setHintTextColor(getResources().getColor(R.color.white30));
+                    SearchView.SearchAutoComplete theTextArea = (SearchView.SearchAutoComplete) searchView.findViewById(R.id.search_src_text);
+                    theTextArea.setTextColor(Color.WHITE);
+                    theTextArea.setHintTextColor(getResources().getColor(R.color.white30));
 
 
-                theTextArea.setHint(recherchePlaceholder);
+                    theTextArea.setHint(recherchePlaceholder);
 
-                searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
-                    public boolean onQueryTextChange(String text) {
+                    searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
+                        public boolean onQueryTextChange(String text) {
 
-                        /*
+
                         if (activeFragment != null && text.length()>=3) {
                             activeFragment.search(text);
                             //searchItem.collapseActionView();
                             recherche = true;
                         }
-                        */
-                        return false;
-                    }
 
-                    public boolean onQueryTextSubmit(String text) {
-                        if (activeFragment != null) {
-
-                            displayTitle = true;
-                           // getSupportActionBar().setDisplayShowTitleEnabled(displayTitle);
-                            actionBarTitle = text;
-
-
-                            activeFragment.search(text);
-                            searchItem.collapseActionView();
-                            drawerToggle.setDrawerIndicatorEnabled(false);
-                            recherche = true;
-
-                            //refreshActionBar();
+                            return false;
                         }
-                        return false;
-                    }
-                });
 
+                        public boolean onQueryTextSubmit(String text) {
+                            if (activeFragment != null) {
+
+                                displayTitle = true;
+                                // getSupportActionBar().setDisplayShowTitleEnabled(displayTitle);
+                                actionBarTitle = text;
+
+
+                                activeFragment.search(text);
+                                searchItem.collapseActionView();
+                                drawerToggle.setDrawerIndicatorEnabled(false);
+                                recherche = true;
+
+                                //refreshActionBar();
+                            }
+                            return false;
+                        }
+                    });
+                }
+*/
             }
+
         }
 
         return true;

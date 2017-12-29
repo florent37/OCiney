@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <string name="app_name">OCiney</string>
+    <string name="app_name">Au cinéma</string>
+
     <string name="app_chapo">FILMS | HORAIRES | CRITIQUES | CASTING</string>
     <string name="prochainement">Prochainement</string>
     <string name="a_laffiche">A l\'affiche</string>

@@ -8,7 +8,7 @@ import android.widget.AbsListView;
 
 import com.bdc.ociney.R;
 import com.bdc.ociney.adapter.ObjectAdapter;
-import com.bdc.ociney.fragment.core.BetterFragment;
+import com.bdc.ociney.fragment.core.BaseFragment;
 import com.bdc.ociney.modele.Movie.Movie;
 import com.bdc.ociney.modele.Person.CastMember;
 import com.bdc.ociney.view.CellMember;
@@ -17,7 +17,7 @@ import com.bdc.ociney.view.MovingImageView;
 import java.util.List;
 
 
-public class ListCastingFragment extends BetterFragment {
+public class ListCastingFragment extends BaseFragment {
 
     public static List<CastMember> casting;
     static Movie movie;
@@ -27,8 +27,13 @@ public class ListCastingFragment extends BetterFragment {
 
     MovingImageView imageFond;
 
+    public static ListCastingFragment newInstance() {
 
-    public ListCastingFragment() {
+        Bundle args = new Bundle();
+
+        ListCastingFragment fragment = new ListCastingFragment();
+        fragment.setArguments(args);
+        return fragment;
     }
 
     @Override

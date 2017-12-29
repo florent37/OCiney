@@ -7,7 +7,8 @@ import android.content.Intent;
 import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
-import android.support.v7.app.ActionBarActivity;
+
+import android.support.annotation.Nullable;
 import android.view.LayoutInflater;
 import android.view.MotionEvent;
 import android.view.View;
@@ -16,51 +17,44 @@ import android.widget.TextView;
 
 import com.bdc.ociney.BuildConfig;
 import com.bdc.ociney.R;
-import com.bdc.ociney.fragment.core.BetterFragment;
+import com.bdc.ociney.core.BaseActivity;
+import com.bdc.ociney.fragment.core.BaseFragment;
+
+import butterknife.BindView;
+import butterknife.ButterKnife;
 
 
-public class CreditsFragment extends BetterFragment implements View.OnTouchListener {
+public class CreditsFragment extends BaseFragment implements View.OnTouchListener {
 
-    View image0, image1, image2;
-    TextView version;
+    @BindView(R.id.image0) View image0;
+    @BindView(R.id.image1) View image1;
+    @BindView(R.id.image2) View image2;
+    @BindView(R.id.version) TextView version;
 
-    public CreditsFragment() {
+    public static CreditsFragment newInstance() {
+        Bundle args = new Bundle();
+        CreditsFragment fragment = new CreditsFragment();
+        fragment.setArguments(args);
+        return fragment;
     }
 
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                             Bundle savedInstanceState) {
+    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
+        return inflater.inflate(R.layout.credits, container, false);
+    }
 
-        View view = inflater.inflate(R.layout.credits,
-                container, false);
-
+    @Override
+    public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
+        super.onViewCreated(view, savedInstanceState);
+        ButterKnife.bind(this, view);
         setFragmentView(view);
 
-        ((ActionBarActivity)getActivity()).getSupportActionBar().setDisplayShowTitleEnabled(true);
-        ((ActionBarActivity)getActivity()).getSupportActionBar().setNavigationMode(ActionBar.NAVIGATION_MODE_STANDARD);
+        ((BaseActivity)getActivity()).getSupportActionBar().setDisplayShowTitleEnabled(true);
+        ((BaseActivity)getActivity()).getSupportActionBar().setNavigationMode(ActionBar.NAVIGATION_MODE_STANDARD);
+
         charger();
         remplir();
         ajouterListeners();
-
-        return view;
-    }
-
-    @Override
-    public void onResume() {
-        super.onResume();
-    }
-
-    @Override
-    public void onPause() {
-        super.onPause();
-    }
-
-    @Override
-    protected void charger() {
-        image0 = findViewById(R.id.image0);
-        image1 = findViewById(R.id.image1);
-        image2 = findViewById(R.id.image2);
-        version = (TextView) findViewById(R.id.version);
     }
 
     @Override

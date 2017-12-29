@@ -49,7 +49,7 @@ public class ObjectAdapter<OBJECT> extends ArrayAdapter<OBJECT> {
         ViewCell cell = null;
         if (view.getTag() != null && view.getTag() instanceof ViewCell)
             cell = (ViewCell) view.getTag();
-        if (view.getTag() == null) {
+        if (view.getTag() == null || !(view.getTag() instanceof ViewCell)) {
             try {
                 cell = (ViewCell) Class.forName(cellClass.getName()).newInstance();
                 cell.construire(context, view);

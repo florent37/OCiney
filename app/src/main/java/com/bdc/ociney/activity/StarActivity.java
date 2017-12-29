@@ -1,72 +1,54 @@
 package com.bdc.ociney.activity;
 
-import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
-import android.support.v4.app.FragmentTransaction;
-import android.support.v7.app.ActionBarActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuInflater;
 
 import com.bdc.ociney.R;
+import com.bdc.ociney.core.BaseActivity;
 import com.bdc.ociney.database.AccessBaseFavoris;
 import com.bdc.ociney.database.BaseFavoris;
 import com.bdc.ociney.fragment.StarFragment;
-import com.bdc.ociney.fragment.core.BetterFragment;
+import com.github.florent37.androidanalytics.Analytics;
+
+import butterknife.BindView;
+import butterknife.ButterKnife;
 
 /**
  * Created by kevin de jesus ferreira on 21/04/2014.
  */
-public class StarActivity extends ActionBarActivity {
+public class StarActivity extends BaseActivity {
 
     final int STATUS_IMAGES = 1;
-    int status = STATUS_IMAGES;
     final int STATUS_FILMO = 2;
+    int status = STATUS_IMAGES;
     StarFragment fragment;
     Menu menu;
 
+    @BindView(R.id.toolbar)
     Toolbar toolbar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_movie);
+        ButterKnife.bind(this);
 
-        toolbar = (Toolbar) findViewById(R.id.toolbar);
+        Analytics.screen("star");
+
         setSupportActionBar(toolbar);
         toolbar.setTitleTextColor(Color.WHITE);
         getSupportActionBar().setHomeAsUpIndicator(getResources().getDrawable(R.drawable.ab_back_mtrl_am_alpha));
 
-        charger();
-        remplir();
-        ajouterListener();
-
-
-    }
-
-    public void ajouterFragment(BetterFragment fragment) {
-
-    }
-
-    private void charger() {
         getSupportActionBar().setHomeButtonEnabled(true);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setHomeAsUpIndicator(getResources().getDrawable(R.drawable.ab_back_mtrl_am_alpha));
-    }
 
-    private void remplir() {
-        Intent intent = getIntent();
-        String jsonStar = intent.getStringExtra(StarFragment.PERSON);
-        fragment = StarFragment.newInstance(jsonStar);
-
-        FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
-        ft.replace(R.id.fragmentLayout, fragment);
-        ft.commit();
-    }
-
-    private void ajouterListener() {
-
+        getSupportFragmentManager().beginTransaction()
+                .replace(R.id.fragmentLayout, fragment = StarFragment.newInstance(getIntent().getStringExtra(StarFragment.PERSON)))
+                .commitAllowingStateLoss();
     }
 
     @Override

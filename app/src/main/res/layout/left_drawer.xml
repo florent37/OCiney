@@ -33,11 +33,13 @@
     </LinearLayout>
 
     <View
+        android:visibility="gone"
         android:layout_width="match_parent"
         android:layout_height="0.5dp"
         android:background="@color/white20" />
 
     <LinearLayout
+        android:visibility="gone"
         android:id="@+id/drawerTheaters"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -121,11 +123,13 @@
     </LinearLayout>
 
     <View
+        android:visibility="gone"
         android:layout_width="match_parent"
         android:layout_height="0.5dp"
         android:background="@color/white20" />
 
     <LinearLayout
+        android:visibility="gone"
         android:id="@+id/drawerCredits"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -152,5 +156,6 @@
     <View
         android:layout_width="match_parent"
         android:layout_height="0.5dp"
+        android:visibility="gone"
         android:background="@color/white20" />
 </LinearLayout>

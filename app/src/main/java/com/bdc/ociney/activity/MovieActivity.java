@@ -6,8 +6,6 @@ import android.content.res.Resources;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
-import android.support.v4.app.FragmentTransaction;
-import android.support.v7.app.ActionBarActivity;
 import android.support.v7.widget.SearchView;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
@@ -16,53 +14,76 @@ import android.view.MenuItem;
 import android.widget.TextView;
 
 import com.bdc.ociney.R;
+import com.bdc.ociney.core.BaseActivity;
 import com.bdc.ociney.database.AccessBaseFavoris;
 import com.bdc.ociney.database.BaseFavoris;
 import com.bdc.ociney.fragment.MovieFragment;
-import com.bdc.ociney.fragment.core.BetterFragment;
+import com.github.florent37.androidanalytics.Analytics;
+import com.google.android.gms.ads.AdView;
+
+import butterknife.BindView;
+import butterknife.ButterKnife;
 
 /**
  * Created by florentchampigny on 21/04/2014.
  */
-public class MovieActivity extends ActionBarActivity {
+public class MovieActivity extends BaseActivity {
 
     final int STATUS_IMAGES = 1;
-    int status = STATUS_IMAGES;
     final int STATUS_VIDEOS = 2;
+    int status = STATUS_IMAGES;
     MovieFragment fragment;
-    boolean afficheCinemas = false;
     boolean afficheCasting = false;
+    boolean afficheCinemas = false;
     Menu menu;
 
     boolean recherche = false;
+
+    @BindView(R.id.toolbar)
     Toolbar toolbar;
+
+    @BindView(R.id.adView)
+    AdView adView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_movie);
+        ButterKnife.bind(this);
 
-        toolbar = (Toolbar) findViewById(R.id.toolbar);
+        Analytics.screen("movie");
+
+        getAdsManager().executeAdView(adView);
+
         setSupportActionBar(toolbar);
         toolbar.setTitleTextColor(Color.WHITE);
         getSupportActionBar().setHomeAsUpIndicator(getResources().getDrawable(R.drawable.ab_back_mtrl_am_alpha));
 
-        charger();
-        remplir();
-        ajouterListener();
+        getSupportActionBar().setHomeButtonEnabled(true);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        getSupportActionBar().setHomeAsUpIndicator(getResources().getDrawable(R.drawable.ab_back_mtrl_am_alpha));
+
+        Intent intent = getIntent();
+        String title = intent.getStringExtra(MovieFragment.ACTIONBAR_TITLE);
+        String jsonMovie = intent.getStringExtra(MovieFragment.MOVIE);
+        fragment = MovieFragment.newInstance(title, jsonMovie);
+
+        getSupportFragmentManager().beginTransaction()
+                .replace(R.id.fragmentLayout, fragment)
+                .commitAllowingStateLoss();
 
         invalidateOptionsMenu();
 
-    }
-
-    public void afficherCinema() {
-        afficheCinemas = true;
-        invalidateOptionsMenu();
     }
 
 
     public void afficherCasting() {
         afficheCasting = true;
+        invalidateOptionsMenu();
+    }
+
+    public void afficherCinemas() {
+        afficheCinemas = true;
         invalidateOptionsMenu();
     }
 
@@ -81,10 +102,11 @@ public class MovieActivity extends ActionBarActivity {
     public boolean onCreateOptionsMenu(Menu menu) {
         this.menu = menu;
 
-        if (afficheCinemas || afficheCasting) {
+        if (afficheCasting) {
             MenuInflater inflater = getMenuInflater();
             inflater.inflate(R.menu.movie_menu_cinema, menu);
 
+            /*
             final MenuItem searchItem = menu.findItem(R.id.search);
             final SearchView searchView = (SearchView) searchItem.getActionView();
             searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
@@ -110,6 +132,7 @@ public class MovieActivity extends ActionBarActivity {
                     return false;
                 }
             });
+            */
 
 
         } else {
@@ -137,33 +160,6 @@ public class MovieActivity extends ActionBarActivity {
         return true;
     }
 
-    public void ajouterFragment(BetterFragment fragment) {
-
-    }
-
-    private void charger() {
-        getSupportActionBar().setHomeButtonEnabled(true);
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-        getSupportActionBar().setHomeAsUpIndicator(getResources().getDrawable(R.drawable.ab_back_mtrl_am_alpha));
-    }
-
-    private void remplir() {
-
-
-        Intent intent = getIntent();
-        String title = intent.getStringExtra(MovieFragment.ACTIONBAR_TITLE);
-        String jsonMovie = intent.getStringExtra(MovieFragment.MOVIE);
-        fragment = MovieFragment.newInstance(title, jsonMovie);
-
-        FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
-        ft.replace(R.id.fragmentLayout, fragment);
-        ft.commit();
-    }
-
-    private void ajouterListener() {
-
-    }
-
     public void changerActionBarColor(int color, int textColor) {
         try {
             ActionBar bar = getActionBar();
@@ -183,11 +179,7 @@ public class MovieActivity extends ActionBarActivity {
 
     @Override
     public void onBackPressed() {
-        if (afficheCinemas) {
-            afficheCinemas = false;
-            fragment.fermerCinema();
-            invalidateOptionsMenu();
-        } else if (afficheCasting) {
+        if (afficheCasting) {
             afficheCasting = false;
             fragment.fermerCasting();
             invalidateOptionsMenu();
@@ -196,7 +188,6 @@ public class MovieActivity extends ActionBarActivity {
 
         recherche = false;
     }
-
 
 
     @Override
@@ -235,8 +226,6 @@ public class MovieActivity extends ActionBarActivity {
                 db.close();
                 return true;
         }
-        ;
-
 
         return super.onOptionsItemSelected(item);
     }
