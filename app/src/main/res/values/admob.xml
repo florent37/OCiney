@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="admob_app" translatable="false">ca-app-pub-6650422603409003~6150283104</string>
+    <string name="admob_interstitial" translatable="false">ca-app-pub-6650422603409003/5519727712</string>
+    <string name="admob_footer" translatable="false">ca-app-pub-6650422603409003/5615274097</string>
+</resources>
