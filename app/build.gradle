@@ -17,7 +17,7 @@ android {
         release {
             storeFile file('keystore.jks')
             storePassword "argent"
-            keyAlias "ociney"
+            keyAlias "cinema"
             keyPassword "argent"
         }
     }
@@ -28,7 +28,7 @@ android {
         versionCode 1
         versionName "1.0.0"
 
-        applicationId "app.wallpman.cinema"
+        applicationId "app.flo.cam.cinema"
     }
     buildTypes {
         release {

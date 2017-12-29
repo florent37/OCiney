@@ -3,30 +3,12 @@
 
     <item
         is-multidex="false"
-        jar="/Applications/Android Studio.app/Contents/gradle/m2repository/com/google/code/gson/gson/2.3/gson-2.3.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="26.0.0"
-        sha1="5fc52c41ef0239d1093a1eb7c3697036183677ce">
-        <dex dex="/Users/florentchampigny/OCiney/app/build/intermediates/pre-dexed/debug/gson-2.3_794c5c112a09eff6a4f6cf7a17eda19021d44b01.jar" />
-    </item>
-    <item
-        is-multidex="false"
         jar="/Users/florentchampigny/OCiney/app/libs/KenBurnsView-1.0.1.jar"
         jumboMode="false"
         optimize="true"
         revision="26.0.0"
         sha1="28ef130d15f6f1a02bde0003365ac5b70c57567c">
-        <dex dex="/Users/florentchampigny/OCiney/app/build/intermediates/pre-dexed/debug/KenBurnsView-1.0.1_0e477ddce52e2cfc50c36043190e5aaf27319871.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="/Users/florentchampigny/.gradle/caches/modules-2/files-2.1/commons-codec/commons-codec/1.11/3acb4705652e16236558f0f4f2192cc33c3bd189/commons-codec-1.11.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="26.0.0"
-        sha1="3acb4705652e16236558f0f4f2192cc33c3bd189">
-        <dex dex="/Users/florentchampigny/OCiney/app/build/intermediates/pre-dexed/debug/commons-codec-1.11_4ad76237a6c6f3eb5e79360284fa6dcb16aa5781.jar" />
+        <dex dex="/Users/florentchampigny/OCiney/app/build/intermediates/pre-dexed/release/KenBurnsView-1.0.1_0e477ddce52e2cfc50c36043190e5aaf27319871.jar" />
     </item>
 
 </items>
